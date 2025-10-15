@@ -4,7 +4,6 @@ Uma aplicação web simples construída com Streamlit para ler e extrair informa
 
 ## 🚀 Funcionalidades
 
-- **Leitura de arquivos SPED Fiscal (.txt)**: Extrai registros e campos dos blocos SPED
 - **Leitura de arquivos NF-e (.xml)**: Extrai informações principais como:
   - Dados do emitente e destinatário
   - Informações da nota fiscal (número, série, data)
