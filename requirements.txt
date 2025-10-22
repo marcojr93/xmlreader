@@ -1,4 +1,11 @@
-streamlit>=1.39.0
-pandas>=2.2.0
-openpyxl>=3.1.0
-xlsxwriter>=3.2.0
+streamlit
+pandas
+openpyxl
+xlsxwriter
+cryptography
+openai
+google-generativeai
+langchain
+langchain-google-genai
+langchain-openai
+langchain-core

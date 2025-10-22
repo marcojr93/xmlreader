@@ -1,0 +1,251 @@
+{
+  "info_geral": {
+    "setores_aplicaveis": ["Peças Automotivas", "Acessórios", "Pneus", "Fluidos", "Motores", "Geral"],
+    "observacoes": "A legislação fiscal brasileira é dinâmica e complexa. Alíquotas de ICMS e MVA/IVA-ST (Substituição Tributária) variam por Estado (UF) e tipo de produto (NCM). Recomenda-se a consulta à legislação específica do Estado de destino e à NCM (Nomenclatura Comum do Mercosul) de cada produto para alíquotas e MVA/IVA corretos.",
+    "versao": "2.0",
+    "data_atualizacao": "2025-10-22"
+  },
+  "regras_fiscais": {
+    "icms": {
+      "aliquotas_interestaduais": {
+        "descricao": "Alíquotas ICMS para operações interestaduais",
+        "regra": "4% para Sul/Sudeste destinatário não contribuinte, 7% para Norte/Nordeste/Centro-Oeste não contribuinte, 12% para contribuintes",
+        "regra_detalhada": "7% ou 12% conforme origem e destino, e 4% para bens importados ou com mais de 40% de conteúdo de importação (Resolução Senado nº 13/2012)",
+        "cfops_aplicaveis": ["6101", "6102", "6107", "6108", "6109"],
+        "base_incidencia": "Valor da Operação (Venda/Transferência/Importação), podendo incluir IPI, frete e despesas acessórias",
+        "verificacao": "aliquota_icms_interestadual"
+      },
+      "aliquotas_internas": {
+        "descricao": "Alíquotas ICMS para operações internas por UF",
+        "regra": "Variável por UF (geralmente 17% a 18% para a maioria dos produtos)",
+        "exemplos_uf": {
+          "SP": "18%",
+          "RJ": "20%", 
+          "MG": "18%",
+          "RS": "17%",
+          "PR": "18%"
+        },
+        "cfops_aplicaveis": ["5101", "5102", "5103", "5104", "5105"],
+        "verificacao": "aliquota_icms_interna"
+      },
+      "substituicao_tributaria": {
+        "descricao": "Produtos sujeitos à substituição tributária",
+        "regra": "NCMs específicos devem ter ICMS ST calculado. Comum para a maioria das autopeças (listadas em convênios/protocolos do CONFAZ)",
+        "aplicacao": "O fabricante/importador (Substituto) recolhe o ICMS devido nas operações subsequentes até o consumidor final (Substituído)",
+        "base_calculo_st": "Valor da Operação Própria + IPI + Frete + Outras Despesas + MVA/IVA-ST (Margem de Valor Agregado/Índice de Valor Adicionado Setorial)",
+        "mva_iva_st": "Índice variável por Estado e por NCM, podendo ser ajustado pela Alíquota Interestadual (MVA Ajustada)",
+        "ncms_st": ["84713012", "85285210", "87089990"],
+        "verificacao": "icms_st_obrigatorio"
+      }
+    },
+    "pis_cofins": {
+      "regime_nao_cumulativo": {
+        "descricao": "Regime não-cumulativo PIS/COFINS - Lucro Real",
+        "regra": "PIS 1,65% e COFINS 7,6% para regime não-cumulativo",
+        "aliquota_pis": "1.65",
+        "aliquota_cofins": "7.6",
+        "creditos": "Permite créditos sobre aquisição de bens para revenda, insumos (matérias-primas, produtos intermediários, material de embalagem), energia elétrica (consumida nos processos industriais), aluguéis, etc.",
+        "base_incidencia": "Receita Bruta",
+        "verificacao": "regime_nao_cumulativo"
+      },
+      "regime_cumulativo": {
+        "descricao": "Regime cumulativo PIS/COFINS - Lucro Presumido",
+        "regra": "PIS 0,65% e COFINS 3,0% para regime cumulativo",
+        "aliquota_pis": "0.65",
+        "aliquota_cofins": "3.0",
+        "creditos": "Não permite créditos",
+        "base_incidencia": "Receita Bruta",
+        "verificacao": "regime_cumulativo"
+      },
+      "monofasico_aliquota_zero": {
+        "descricao": "Regime monofásico ou alíquota zero",
+        "aplicacao": "Comum para certos produtos do setor automotivo, como Pneus, autopeças (listadas na Lei nº 10.485/02 e alterações), combustíveis/fluidos e máquinas/veículos automotores",
+        "impacto": "O PIS e COFINS são recolhidos com alíquotas concentradas na indústria/importador, e o revendedor tem alíquota zero",
+        "verificacao": "monofasico_zero"
+      },
+      "isencoes": {
+        "descricao": "Produtos isentos de PIS/COFINS",
+        "regra": "Medicamentos, produtos básicos da cesta básica",
+        "ncms_isentos": ["30049099", "10011000", "19011000"],
+        "verificacao": "isencao_pis_cofins"
+      },
+      "exclusao_icms": {
+        "descricao": "Exclusão do ICMS da base de cálculo",
+        "regra": "O ICMS destacado na Nota Fiscal (vendas) deve ser excluído da base de cálculo do PIS e da COFINS (Tema 69 do STF)",
+        "verificacao": "exclusao_icms_base"
+      }
+    },
+    "ipi": {
+      "produtos_industrializados": {
+        "descricao": "Produtos sujeitos ao IPI",
+        "regra": "Produtos industrializados conforme TIPI. Incide sobre a saída do estabelecimento industrial (fabricante) ou importador",
+        "base_incidencia": "Valor da operação, incluindo o frete e as despesas acessórias",
+        "nao_cumulatividade": "Permite créditos do IPI pago na aquisição de matérias-primas, produtos intermediários e material de embalagem utilizados na industrialização",
+        "ncms_ipi": {
+          "84713012": "15%",
+          "85285210": "10%",
+          "87089990": "25%"
+        },
+        "observacao": "Alíquotas variáveis conforme o código NCM/TIPI do produto. Muitas autopeças e acessórios possuem alíquotas específicas",
+        "verificacao": "ipi_obrigatorio"
+      },
+      "isencoes_ipi": {
+        "descricao": "Produtos isentos de IPI",
+        "regra": "Produtos da cesta básica, medicamentos essenciais, livros",
+        "ncms_isentos": ["19011000", "30049099", "49019900"],
+        "verificacao": "isencao_ipi"
+      }
+    },
+    "cfop": {
+      "vendas_interestaduais": {
+        "descricao": "CFOPs para vendas interestaduais",
+        "regra": "6101-6199 para vendas a outros estados",
+        "cfops_validos": ["6101", "6102", "6107", "6108", "6109"],
+        "verificacao": "cfop_interestadual"
+      },
+      "vendas_internas": {
+        "descricao": "CFOPs para vendas internas",
+        "regra": "5101-5199 para vendas dentro do estado",
+        "cfops_validos": ["5101", "5102", "5103", "5104", "5105"],
+        "verificacao": "cfop_interno"
+      }
+    }
+  },
+  "formulas_calculo": {
+    "pis_cofins_cumulativo": {
+      "pis": "Receita_Bruta * 0.0065",
+      "cofins": "Receita_Bruta * 0.03"
+    },
+    "pis_cofins_nao_cumulativo": {
+      "pis": "(Receita_Bruta * 0.0165) - (Base_Calculo_Creditos * 0.0165)",
+      "cofins": "(Receita_Bruta * 0.076) - (Base_Calculo_Creditos * 0.076)"
+    },
+    "icms_normal": "Valor_da_Operacao * Aliquota_ICMS_Interna_ou_Interestadual",
+    "icms_st": {
+      "icms_proprio": "Valor_do_Produto + IPI + Frete + Outras_Despesas * Aliquota_ICMS_Interna",
+      "base_calculo_st": "(Valor_do_Produto + IPI + Frete + Outras_Despesas) * (1 + MVA_Original_ou_Ajustada)",
+      "icms_st_devido": "(Base_Calculo_ST * Aliquota_ICMS_Interna) - ICMS_Proprio"
+    },
+    "mva_ajustada": "MVA_Ajustada = [(1 + MVA_Original) * (Alíquota_Interna / Alíquota_Interestadual)] - 1"
+  },
+  "beneficios_fiscais": {
+    "zona_franca": {
+      "descricao": "Benefícios Zona Franca de Manaus",
+      "regra": "Produtos da ZFM podem ter redução de IPI",
+      "reducao_ipi": "88%",
+      "verificacao": "beneficio_zfm"
+    },
+    "simples_nacional": {
+      "descricao": "Regime Simples Nacional",
+      "regra": "Empresas do Simples têm tributação diferenciada",
+      "aliquotas_reduzidas": true,
+      "verificacao": "simples_nacional"
+    },
+    "programa_mover": {
+      "descricao": "Programa MOVER - Mobilidade Verde e Inovação",
+      "aplicacao": "Substitui o Rota 2030. Concede créditos financeiros para empresas que investem em pesquisa, desenvolvimento e produção de veículos mais seguros, eficientes e menos poluentes",
+      "incentivo_ipi_verde": "Sistema de recompensa/penalização na cobrança do IPI baseado em indicadores como fonte de energia, consumo energético, potência do motor, reciclabilidade",
+      "criterios": "Investimento em P&D, metas de eficiência energética, redução de emissões e critérios de reciclabilidade veicular",
+      "verificacao": "programa_mover"
+    },
+    "outros_incentivos": [
+      "Regimes Especiais de ICMS (variáveis por UF, como crédito presumido, redução de base de cálculo)",
+      "Redução de Alíquotas de IPI (pontuais e temporárias, conforme decretos)",
+      "Isenção/Redução do Imposto de Importação para bens sem produção nacional ou no âmbito de acordos comerciais (Ex-Tarifário, Acordos Mercosul)"
+    ]
+  },
+  "oportunidades": {
+    "reducao_icms": {
+      "descricao": "Verificar possibilidade de redução de base de cálculo ICMS",
+      "potencial": "Alto",
+      "complexidade": "Média"
+    },
+    "credito_pis_cofins": {
+      "descricao": "Avaliar créditos de PIS/COFINS no regime não-cumulativo",
+      "potencial": "Alto", 
+      "complexidade": "Alta"
+    },
+    "isencao_ipi": {
+      "descricao": "Analisar enquadramento em isenções de IPI",
+      "potencial": "Médio",
+      "complexidade": "Média"
+    },
+    "beneficios_regionais": {
+      "descricao": "Pesquisar incentivos fiscais regionais",
+      "potencial": "Variável",
+      "complexidade": "Alta"
+    },
+    "diferimento": {
+      "descricao": "Avaliar possibilidade de diferimento de impostos",
+      "potencial": "Médio",
+      "complexidade": "Média"
+    },
+    "monofasico_autopeças": {
+      "descricao": "Verificar enquadramento em regime monofásico para autopeças",
+      "potencial": "Alto",
+      "complexidade": "Média"
+    }
+  },
+  "alertas": {
+    "aliquota_incorreta": {
+      "descricao": "Alíquota aplicada não confere com a legislação",
+      "gravidade": "Alta",
+      "acao": "Verificar tabela de alíquotas por UF e NCM"
+    },
+    "cfop_inadequado": {
+      "descricao": "CFOP não adequado para a operação",
+      "gravidade": "Média",
+      "acao": "Conferir se CFOP condiz com natureza da operação e UF destino"
+    },
+    "base_calculo_incorreta": {
+      "descricao": "Base de cálculo pode estar incorreta",
+      "gravidade": "Alta",
+      "acao": "Verificar inclusão/exclusão de IPI, frete e despesas acessórias"
+    },
+    "imposto_nao_devido": {
+      "descricao": "Imposto cobrado pode não ser devido",
+      "gravidade": "Alta",
+      "acao": "Verificar isenções e benefícios aplicáveis ao produto/operação"
+    },
+    "falta_substituicao": {
+      "descricao": "Produto sujeito à substituição tributária não aplicada",
+      "gravidade": "Crítica",
+      "acao": "Verificar se NCM está sujeito a ST e aplicar cálculo correto"
+    },
+    "exclusao_icms_pis_cofins": {
+      "descricao": "ICMS não excluído da base de PIS/COFINS",
+      "gravidade": "Alta",
+      "acao": "Aplicar tese do Tema 69 do STF para exclusão do ICMS"
+    }
+  },
+  "verificacoes_automaticas": {
+    "aliquota_icms_interestadual": {
+      "condicoes": ["cfop.startswith('6')", "uf_origem != uf_destino"],
+      "valores_esperados": ["4", "7", "12"]
+    },
+    "aliquota_icms_interna": {
+      "condicoes": ["cfop.startswith('5')", "uf_origem == uf_destino"],
+      "valores_por_uf": {"SP": "18", "RJ": "20", "MG": "18", "RS": "17", "PR": "18"}
+    },
+    "icms_st_obrigatorio": {
+      "condicoes": ["ncm in ncms_st"],
+      "verificar": "presenca_icms_st_na_nota"
+    },
+    "regime_nao_cumulativo": {
+      "condicoes": ["aliquota_pis == '1.65'", "aliquota_cofins == '7.6'"],
+      "oportunidade": "creditos_pis_cofins"
+    },
+    "isencao_pis_cofins": {
+      "condicoes": ["ncm in ncms_isentos_pis_cofins"],
+      "valores_esperados": ["0", "0.00"]
+    },
+    "ipi_obrigatorio": {
+      "condicoes": ["ncm in ncms_ipi"],
+      "verificar": "presenca_ipi_na_nota"
+    },
+    "cfop_consistencia": {
+      "condicoes": ["cfop.startswith('5') and uf_origem != uf_destino"],
+      "alerta": "cfop_uf_inconsistente"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "encryption_version": "1.0",
+    "timestamp": "2025-10-22T10:40:04.107310",
+    "total_records": 3,
+    "encryption_stats": {
+      "total_records": 3,
+      "encrypted_fields": 15,
+      "blocked_injections": 0,
+      "timestamp": "2025-10-22T10:40:03.894302"
+    }
+  },
+  "data": [
+    {
+      "Número NF": "001",
+      "Emitente CNPJ": "ENC:Z0FBQUFBQm8tT3pEWEJnMnFmdWNRcXJDSldWUjV2TDJlaXpyYkZkdzlNNDNyVll1LVhxMDd6VV8tcm1fb1lPSXUtaFIyZWVTNWRCSkEyc3J6a0d5RldnVXc3RTJIX0p4dVhiQXJMWU5ZVlozU2o5cmowc2ZIV0E9",
+      "Emitente Nome": "ENC:Z0FBQUFBQm8tT3pERjFDVkJ1UzJpbFpDaGVKeXRWLThFWHdMU00tSVVEY3hhMTRFaG90VVZmaGVpY2NxaUsyeU5NU1hZU3piQVBwUXdtRThUV2NBcnhzTWpWZGxNMkYxX2d6ZGJnMzU1bnotVTJYb0dRUDhjUlU9",
+      "Destinatário CNPJ": "ENC:Z0FBQUFBQm8tT3pEMVlEVktnckM0bFhqUlZVWjkzY08xblU0ODdiUFNmOTFGeWl0bVBDMEhydFM5czM1eFh1N1oxVVBnSnU3cDNma0t2LURGUHZETGpBTVJ4SDl6a2hjTjNpMTVkMWltTzM0dWwzVzRTV1pfc1k9",
+      "Destinatário Nome": "ENC:Z0FBQUFBQm8tT3pEd2hhZ3dUaGYyX1ZHZWtvVnVhV1pQWTZJNFRNSTFoUmpNQlpET2VCZ3N3NjlaWW84cTlaUm1FQWhhSVRyODNBcnZEcnR5WTd1TGJ1Uk5JMFMwREZINkE4eVFoNmVrVU5HN0lNc010aW03VGc9",
+      "Valor NF": "ENC:Z0FBQUFBQm8tT3pEU3dXaHBncVNYbzFPbWhSS2RmLVJ1QW9JVlE2LTJXajlTb0JtdF93UURsMDBRM2FIUGlwSE1ZbS1UMk56VHRMdDZmQlRGUEpPWlJiNXVyRF9vVXVwRHc9PQ==",
+      "Data Emissão": "2025-10-20",
+      "Emitente CNPJ_hash": "e5ea3ae73ef429fe",
+      "Destinatário CNPJ_hash": "2d1344828d6a073a",
+      "Emitente Nome_hash": "457234da71626c04",
+      "Destinatário Nome_hash": "526100adb97660ab",
+      "Valor NF_hash": "d7be848b5b54c92d",
+      "_encrypted_timestamp": "2025-10-22T10:40:03.931309",
+      "_encryption_version": "1.0"
+    },
+    {
+      "Número NF": "002",
+      "Emitente CNPJ": "ENC:Z0FBQUFBQm8tT3pEZUY3b0xKZ0NJTFIxYnNscTZvd3FrRTdYN0d0OG5NaXJBZzhWT2hjZWdLVEhLblRrMjZDMHBjMkpUMFhzMW1wdWdjLUs3UDhBSlllVVd0eFhJZU93TVNWTmQxT2dIY1lTWlBiakVGUXp2bU09",
+      "Emitente Nome": "ENC:Z0FBQUFBQm8tT3pEeGdDX3h4U0RzNVR1eS0xVXJfSTRRM0FaWEV4N0NtYnBNSmxuejFnLUVuXzJnalg5eTkwelZVQ0lvQjNJVGtSOUZ6RU90XzhMTU53Wi14Y1AwTWVUQnJTdEtuNnlhM2Frd3BhT05MeGN1djA9",
+      "Destinatário CNPJ": "ENC:Z0FBQUFBQm8tT3pEM1hWZGNNVHRvakJ4QklpQ0hXY0c5RXNrakhQbTVTcER0b21CeGlXUEhyWDdnajFIbVFzanBXYXZxMFFYSDdKbThJamZNc3Z1dlEyeG5mVHNfWVNiVzNucE0tUjJDY3JTMzZEVUVzZExQdlk9",
+      "Destinatário Nome": "ENC:Z0FBQUFBQm8tT3pEQlBpdGFaTXJ2VXRiTDJNMUNOck9nbVBweGVaMFhwOWhBNkZuLVRvN054QXlnSU9BMWRiQTZtUWFyV2s4aHExV1h5NnpGT2xNY2VVM1cwY1E5emNQOXc9PQ==",
+      "Valor NF": "ENC:Z0FBQUFBQm8tT3pESlpoeWh2Zl9pZGN2OGdBdVF4T0ZCTmR4bWIwS1lpeEtrNVNCWHJCVzJGbmptbVBhUVZjS3lFa0ExVnNYaFEwd1ZMZlFMeDhCMTRlTVlGTXZTZWRJaVE9PQ==",
+      "Data Emissão": "2025-10-21",
+      "Emitente CNPJ_hash": "87fd43feaf241934",
+      "Destinatário CNPJ_hash": "ca62df1ec6921207",
+      "Emitente Nome_hash": "8b27cc0995714a7d",
+      "Destinatário Nome_hash": "b7dd8f91544a0311",
+      "Valor NF_hash": "e142f02e5f084711",
+      "_encrypted_timestamp": "2025-10-22T10:40:03.931309",
+      "_encryption_version": "1.0"
+    },
+    {
+      "Número NF": "003",
+      "Emitente CNPJ": "ENC:Z0FBQUFBQm8tT3pEOExmZ19zS25XVUcxMkJDTW9CZ0xQWWNKTHQ2NGVGMzZEcUlFQ3BwQVhRWDNuRWk5UTV0R0F0MHByc3ZEYW9Rb29ycUhCVVVJM2g3WExQbEw5dlV5ZDFTZjJfVjUwUHdzNjY3VU1UZUN4QVU9",
+      "Emitente Nome": "ENC:Z0FBQUFBQm8tT3pERXRzcF9yT3pwN0JIY2xPQ3Y1RzFJMFdHdlRmNHQyQ0E1YmNNb01FS3lYbmttRjBsMEd2T3FYaURudUhmQVhFclhSV2ZIV2FMakxwT0JyT0VwNVI4MWZjSjdaMzhEd2xGR0VOc3Zic2JDLTQ9",
+      "Destinatário CNPJ": "ENC:Z0FBQUFBQm8tT3pEWVB2VHpTaXMxY2JNc09XUTNtMThTcHhfQjFBLXZmT2JsRDBBaEtORUV3dnprSm1vMU1NWEtRbXJEZC1HOV81TFdEc2J4MmEzOURyUnMzWlFiUVV6WnVDMHFuRS0zWnRqbk1fNnNod3FSVWc9",
+      "Destinatário Nome": "ENC:Z0FBQUFBQm8tT3pEcVJES2o0QjBXNjJmd3R2SEVFcF9oanRSSXBLM1JlV0V2akxkTjN5RDAtUEtaeGlkeFJLX0VILUFPSWxfUlNIMVBIbHlEOHA5RUNRX2RIYU5sZ2tUMFE9PQ==",
+      "Valor NF": "ENC:Z0FBQUFBQm8tT3pEektKWWZMY05TVFBDdXJiTnpkTzlpNlpHdUgxUE1ZWE1JZUx4QkRHN0VxVFFLX3A2YmtKV2FGX0RmOVJTRWNKZDNodEhRSzViQTJXN3BkVUpld3BYY2c9PQ==",
+      "Data Emissão": "2025-10-22",
+      "Emitente CNPJ_hash": "f2a3fbda6beebe87",
+      "Destinatário CNPJ_hash": "da6f408cc3d8a780",
+      "Emitente Nome_hash": "253f3ed6909478f2",
+      "Destinatário Nome_hash": "812bfa9818886f4b",
+      "Valor NF_hash": "ed1cab9e796aa5aa",
+      "_encrypted_timestamp": "2025-10-22T10:40:03.931309",
+      "_encryption_version": "1.0"
+    }
+  ]
+}
