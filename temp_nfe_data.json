@@ -1,0 +1,391 @@
+{
+  "timestamp_salvamento": "2025-10-30T14:09:06.586865",
+  "arquivo_xml_nome": "29250507704914000344550010000745461745461769 - Copy.xml",
+  "cabecalho_df": [
+    {
+      "Número NF": "ENC:Z0FBQUFBQnBBNm1neWl4VzJGTkgzZmRwZnlwT18xSGJWcHhYbm1uUGpTSmFXMlVzVWdmRnk2cld0a0wxNktvWi0zczF1eEdJZC0wQV9QbWs0djRadnczbUFQX3lvWFNhLXc9PQ==",
+      "Série": "1",
+      "Data Emissão": "2025-05-21T00:00:00-03:00",
+      "Data Saída/Entrada": "2025-05-21T00:00:00-03:00",
+      "Natureza Operação": "VENDA",
+      "Tipo NF": "1",
+      "Modelo": "55",
+      "UF": "29",
+      "Finalidade": "1",
+      "Emitente CNPJ": "ENC:Z0FBQUFBQnBBNm1nUEdCaXNjRlAwY2lOUjNjWV9NM0tMUXlucHRXR21sdVY2dUxBNmJiaEtPUEtjVnFRMkJZZUdvOGxYc1ZrV2dkR1F4eU5WN1lmeGhLVzlJMms4YVBtSHc9PQ==",
+      "Emitente Nome": "ENC:Z0FBQUFBQnBBNm1nT3lBcGpYUmRhQ0dUdFIzd0lxOHhyaUgxTzEyb3I4RGhCNFdmRHVacDdJTFpxRnBBZWwyVFE3QkNQQUhxQmM5UnIyTVdWR1BEOGJVMVlrbTJxbjFLSFBjWmdNSDNVTGRMTVF5VE1aSjlLeU09",
+      "Emitente Fantasia": "ENC:Z0FBQUFBQnBBNm1nUnl6SGtoSHg4VEY5Z3ZGRkl2NlNzUWpVTWdvTVNYOHhPSDRrTTFIRVVnU0p2ZXlDaEdlWmV4V0ZXdXQxRzF3QnJ5NzhFdGxUcklzX3NDZkg2YlhJUmc9PQ==",
+      "Emitente IE": "ENC:Z0FBQUFBQnBBNm1nS0hnN1BBdlF3QWFrUmZ1SVVRalNkV21OM1JHdDV3a2VuYzJhNkl3RVJmODhRenVlNkh2ajNTU0E5VXdaWkVGTlJHVTFsbERxR0E1alViNV9SRWU5SlE9PQ==",
+      "Emitente UF": "BA",
+      "Emitente Município": "ENC:Z0FBQUFBQnBBNm1nZHVMc0xXLXJBcExqdFEwN0NHT0ZkdDZ3QnJvRzdZYmYzaDJFU2FyS3ZIX3pSMDRITHNYWUF3MkZHV1FRelFtZU10bjd6OTRHWkFCYnB3SDN6QklNeXc9PQ==",
+      "Emitente CEP": "ENC:Z0FBQUFBQnBBNm1nT1hiY25fMGdwekhkUThfLWVJTkw1YVNJdGFCbVlzNnFvZlV0WFQ3YlZGSkZaRVRNZ3FHaTFzN0E0VjJxX2daLUNyVzVoZWphRkJINVpRbkQ4THZveGc9PQ==",
+      "Destinatário CNPJ": "ENC:Z0FBQUFBQnBBNm1nZExnbElPYU1TeVlxMEl0c2UzdTNxb1EyenpuSjRKclRRbXYzajRwcjJVS1ZXQ2g1dXdycHVWdW4tZmJmV09BeldnY3dSN19hdWxJdzlCdXl2SkRQbFE9PQ==",
+      "Destinatário Nome": "ENC:Z0FBQUFBQnBBNm1nejZKY05ZdnhmVGk3bmtMRERnX0dKZTNHWTJ2SHlwQ0k0bF9YX2JCNmdVTWppWkRnY1BlWUxJOFVicHR5bUExVEVWVVJTMENnaWtSdUt0NVByR2pxTzhvUWVPRHE0c2JfN181SjBfWHBxS2xwdy01Q1JDV19HRUU1WXhZQ203Y1A=",
+      "Destinatário IE": "ENC:Z0FBQUFBQnBBNm1nUEtRZkhxTVZveUZqNFdVWkRfZlhRLTdSakplcU44WWszR3pTNnNQdlRQcWZsV2w0OU9fRkJackdHa0sxZG9qYVJHaDRGTE12eDhRRHZ6bU9zVmRTY2c9PQ==",
+      "Destinatário UF": "SP",
+      "Destinatário Município": "ENC:Z0FBQUFBQnBBNm1nZ3pfR09rZEZNaUI2Y1VBUG9tU0tBTU52VU9MbDhBV0ZRSlNqM2JSeFhWRXhWZzZSRFBxQXdNMW5XdmpFRTFMTE0tWC1wS2pVYWhNQVRWZHQ2VzM4Q2c9PQ==",
+      "Destinatário CEP": "ENC:Z0FBQUFBQnBBNm1nX0JQazluOW9yTzZZWlU5MGJnMDk0U0lSUXhMY0pwSUhOUVhDdGJPUUpLdnNqQUlDZHVXOUQ5QjNTTU5TZTZlVXJ0UjBDaUs5R3pLTTNxaDM1ODFTN1E9PQ==",
+      "Modalidade Frete": "0",
+      "Transportadora Nome": "ENC:Z0FBQUFBQnBBNm1nWVN4dnM1a05zdU03dnAxQmhzQ095YXRMc05sb2VYUU1LODBsTEJnMnVsTGM3MHBnX2QtR3dRN0NCUmFpSjVZMzRtNldpeTJ4a0UteU05R3FGS0ZQWGI4RHJHc2hPYjFrWkM5NTFQdWFSeXZZUGhhdEJFc0pSREhONTBfZzQxNWQ=",
+      "Transportadora CNPJ": "ENC:Z0FBQUFBQnBBNm1neVU4NW9ybjRJZTVQSUtERGthZUYtSnNPenBCMlc3ZEg3VGVJUy0za0pCOTJONngwYjl2bm9JMHl1SDkzYmlmOTV2ejZlcXdRMVhoNzktNXVwRzFraVE9PQ==",
+      "Transportadora UF": "BA",
+      "Qtde Volumes": "23",
+      "Peso Líquido": "27.630",
+      "Peso Bruto": "30.440",
+      "Número Fatura": "74546",
+      "Valor Original": "1747.50",
+      "Valor Líquido": "1747.50",
+      "Número Duplicata": "001",
+      "Data Vencimento": "2025-05-21",
+      "Valor Duplicata": "1747.50",
+      "Base ICMS": "1733.79",
+      "Valor ICMS": "208.07",
+      "Valor Produtos": "1733.79",
+      "Valor NF": "1747.50",
+      "Valor Frete": "0",
+      "Valor IPI": "13.71",
+      "Valor COFINS": "115.95",
+      "Valor PIS": "25.16",
+      "Emitente CNPJ_hash": "8fa982fe0e1c2ef6",
+      "Destinatário CNPJ_hash": "fe97dc6bcbb616c0",
+      "Transportadora CNPJ_hash": "73d7b890ca558b17",
+      "Emitente IE_hash": "93b4946c4dbd5a7c",
+      "Destinatário IE_hash": "419f335059764a05",
+      "Emitente Nome_hash": "b37aadaa7e465ff2",
+      "Destinatário Nome_hash": "b67c4a0fe01d34af",
+      "Transportadora Nome_hash": "665d147f3f1ccdad",
+      "Emitente Fantasia_hash": "92b6f3ac28b7d182",
+      "Número NF_hash": "34ea92079d24d75d",
+      "Emitente CEP_hash": "ad8c4faf8856044b",
+      "Destinatário CEP_hash": "a02c1f55ddbee31c",
+      "Emitente Município_hash": "602cac6ebcc5a39c",
+      "Destinatário Município_hash": "43f0cc3d34400f29",
+      "_encrypted_timestamp": "2025-10-30T14:08:32.058886",
+      "_encryption_version": "2.0_selective",
+      "_public_fields_count": 13,
+      "_encrypted_fields_count": 14
+    }
+  ],
+  "produtos_df": [
+    {
+      "Item": "1",
+      "Código": "2",
+      "Descrição": "ORBIVED SELANTE VERMELHO 50G",
+      "NCM": "32141010",
+      "CFOP": "6101",
+      "Unidade": "BIS",
+      "Quantidade": "156.0000",
+      "Valor Unitário": "4.6269",
+      "Valor Total": "721.80",
+      "ICMS": "86.62",
+      "IPI": "9.38",
+      "PIS": "10.48",
+      "COFINS": "48.27",
+      "_encrypted_timestamp": "2025-10-30T14:08:32.063883",
+      "_encryption_version": "2.0_selective",
+      "_public_fields_count": 7,
+      "_encrypted_fields_count": 0
+    },
+    {
+      "Item": "2",
+      "Código": "336",
+      "Descrição": "ORBIVED SELANTE CINZA 50G",
+      "NCM": "32141010",
+      "CFOP": "6101",
+      "Unidade": "BIS",
+      "Quantidade": "24.0000",
+      "Valor Unitário": "4.6269",
+      "Valor Total": "111.05",
+      "ICMS": "1350012.33",
+      "IPI": "1.44",
+      "PIS": "1.61",
+      "COFINS": "7.43",
+      "_encrypted_timestamp": "2025-10-30T14:08:32.063883",
+      "_encryption_version": "2.0_selective",
+      "_public_fields_count": 7,
+      "_encrypted_fields_count": 0
+    },
+    {
+      "Item": "3",
+      "Código": "337",
+      "Descrição": "ORBIVED SELANTE PARA MOTOR PRETO 50G",
+      "NCM": "32141010",
+      "CFOP": "6101",
+      "Unidade": "BIS",
+      "Quantidade": "48.0000",
+      "Valor Unitário": "4.6269",
+      "Valor Total": "222.09",
+      "ICMS": "26.65",
+      "IPI": "2.89",
+      "PIS": "3.22",
+      "COFINS": "14.85",
+      "_encrypted_timestamp": "2025-10-30T14:08:32.063883",
+      "_encryption_version": "2.0_selective",
+      "_public_fields_count": 7,
+      "_encrypted_fields_count": 0
+    },
+    {
+      "Item": "4",
+      "Código": "1533",
+      "Descrição": "ORBI COLA JUNTAS 75G - CAIXA 36 UN COLMEIA",
+      "NCM": "35069110",
+      "CFOP": "6101",
+      "Unidade": "BIS",
+      "Quantidade": "72.0000",
+      "Valor Unitário": "4.268",
+      "Valor Total": "307.30",
+      "ICMS": "36.88",
+      "IPI": "0",
+      "PIS": "4.46",
+      "COFINS": "20.55",
+      "_encrypted_timestamp": "2025-10-30T14:08:32.063883",
+      "_encryption_version": "2.0_selective",
+      "_public_fields_count": 7,
+      "_encrypted_fields_count": 0
+    },
+    {
+      "Item": "5",
+      "Código": "2880",
+      "Descrição": "ORBICOLA - ADES CONTATO - AMBAR 75 G - COLMEIA",
+      "NCM": "35061090",
+      "CFOP": "6101",
+      "Unidade": "BIS",
+      "Quantidade": "72.0000",
+      "Valor Unitário": "5.1604",
+      "Valor Total": "371.55",
+      "ICMS": "44.59",
+      "IPI": "0",
+      "PIS": "500.39",
+      "COFINS": "24.85",
+      "_encrypted_timestamp": "2025-10-30T14:08:32.063883",
+      "_encryption_version": "2.0_selective",
+      "_public_fields_count": 7,
+      "_encrypted_fields_count": 0
+    }
+  ],
+  "resultado_validador": {
+    "status": "parcial",
+    "produtos_analisados": 5,
+    "oportunidades": [
+      {
+        "tipo": "Monofasico Autopeças",
+        "produto": "32141010",
+        "descricao": "Verificar enquadramento no regime monofásico para autopeças. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.",
+        "impacto": "Alto",
+        "acao_recomendada": "Consultar a lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações) e confirmar se o NCM 32141010 se enquadra."
+      },
+      {
+        "tipo": "Monofasico Autopeças",
+        "produto": "35069110",
+        "descricao": "Verificar enquadramento no regime monofásico para autopeças. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.",
+        "impacto": "Alto",
+        "acao_recomendada": "Consultar a lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações) e confirmar se o NCM 35069110 se enquadra."
+      },
+      {
+        "tipo": "Monofasico Autopeças",
+        "produto": "35061090",
+        "descricao": "Verificar enquadramento no regime monofásico para autopeças. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.",
+        "impacto": "Alto",
+        "acao_recomendada": "Consultar a lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações) e confirmar se o NCM 35061090 se enquadra."
+      }
+    ],
+    "discrepancias": [
+      {
+        "tipo": "Alíquota Incorreta",
+        "produto": "Todos",
+        "problema": "Não foi informada a UF de destino, impossibilitando a verificação da alíquota interestadual de ICMS correta (4%, 7% ou 12%).",
+        "gravidade": "Alta",
+        "correcao": "Obter a UF de destino da NFe e verificar se a alíquota de ICMS aplicada está de acordo com as regras interestaduais (4% para Sul/Sudeste não contribuinte, 7% para Norte/Nordeste/Centro-Oeste não contribuinte, 12% para contribuintes)."
+      }
+    ],
+    "resumo_executivo": "A análise preliminar da NFe revela oportunidades de otimização fiscal relacionadas ao regime monofásico de PIS/COFINS para autopeças. É crucial verificar se os NCMs dos produtos (32141010, 35069110 e 35061090) se enquadram nesse regime. Além disso, a ausência da UF de destino impede a validação da alíquota interestadual de ICMS, representando um risco de não conformidade. Recomenda-se obter essa informação e verificar a alíquota aplicada.",
+    "detalhes_tecnicos": "A análise foi realizada com base nos dados fornecidos (NCM, CFOP, quantidade, valor unitário e valor total) e no banco de regras fiscais. A verificação da alíquota de ICMS interestadual (regra 'aliquotas_interestaduais') não pôde ser totalmente concluída devido à falta da UF de destino. A análise de PIS/COFINS considerou a possibilidade de enquadramento no regime monofásico (regra 'monofasico_aliquota_zero'). Não foi possível verificar a aplicação da Substituição Tributária (ICMS-ST) pois a UF de destino é necessária para determinar se há convênio/protocolo entre os estados para os NCMs listados.",
+    "banco_regras_carregado": true,
+    "modelo_utilizado": "gemini",
+    "resumo_dropdown": "## RELATÓRIO DE ANÁLISE FISCAL\n\n**Status:** parcial\n**Produtos analisados:** 5\n**Oportunidades:** 3\n**Discrepâncias:** 1\n\n### RESUMO EXECUTIVO\n\nA análise preliminar da NFe revela oportunidades de otimização fiscal relacionadas ao regime monofásico de PIS/COFINS para autopeças. É crucial verificar se os NCMs dos produtos (32141010, 35069110 e 35061090) se enquadram nesse regime. Além disso, a ausência da UF de destino impede a validação da alíquota interestadual de ICMS, representando um risco de não conformidade. Recomenda-se obter essa informação e verificar a alíquota aplicada.\n\n### OPORTUNIDADES IDENTIFICADAS\n\n**1. Monofasico Autopeças**\n   • **Produto:** 32141010\n   • **Descrição:** Verificar enquadramento no regime monofásico para autopeças. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.\n   • **Impacto:** Alto\n   • **Ação:** Consultar a lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações) e confirmar se o NCM 32141010 se enquadra.\n\n**2. Monofasico Autopeças**\n   • **Produto:** 35069110\n   • **Descrição:** Verificar enquadramento no regime monofásico para autopeças. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.\n   • **Impacto:** Alto\n   • **Ação:** Consultar a lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações) e confirmar se o NCM 35069110 se enquadra.\n\n**3. Monofasico Autopeças**\n   • **Produto:** 35061090\n   • **Descrição:** Verificar enquadramento no regime monofásico para autopeças. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.\n   • **Impacto:** Alto\n   • **Ação:** Consultar a lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações) e confirmar se o NCM 35061090 se enquadra.\n\n### DISCREPÂNCIAS ENCONTRADAS\n\n**1. Alíquota Incorreta 🔴**\n   • **Produto:** Todos\n   • **Problema:** Não foi informada a UF de destino, impossibilitando a verificação da alíquota interestadual de ICMS correta (4%, 7% ou 12%).\n   • **Gravidade:** Alta\n   • **Correção:** Obter a UF de destino da NFe e verificar se a alíquota de ICMS aplicada está de acordo com as regras interestaduais (4% para Sul/Sudeste não contribuinte, 7% para Norte/Nordeste/Centro-Oeste não contribuinte, 12% para contribuintes).\n\n### DETALHES TÉCNICOS\n\nA análise foi realizada com base nos dados fornecidos (NCM, CFOP, quantidade, valor unitário e valor total) e no banco de regras fiscais. A verificação da alíquota de ICMS interestadual (regra 'aliquotas_interestaduais') não pôde ser totalmente concluída devido à falta da UF de destino. A análise de PIS/COFINS considerou a possibilidade de enquadramento no regime monofásico (regra 'monofasico_aliquota_zero'). Não foi possível verificar a aplicação da Substituição Tributária (ICMS-ST) pois a UF de destino é necessária para determinar se há convênio/protocolo entre os estados para os NCMs listados.\n\n"
+  },
+  "resultado_analista": {
+    "status": "parcial",
+    "regime_tributario": "LUCRO REAL",
+    "discrepancias_analisadas": 1,
+    "analises_detalhadas": [
+      {
+        "discrepancia_original": "Não foi informada a UF de destino, impossibilitando a verificação da alíquota interestadual de ICMS correta (4%, 7% ou 12%).",
+        "analise_tecnica": "A legislação do ICMS estabelece alíquotas interestaduais diferenciadas com base na UF de origem e destino, bem como no tipo de contribuinte (contribuinte ou não contribuinte do ICMS). A ausência da UF de destino impede a correta determinação da alíquota aplicável e o cálculo do ICMS devido. No caso de operação interestadual, é necessário verificar se há aplicação do Diferencial de Alíquota (DIFAL) conforme Emenda Constitucional 87/2015, caso o destinatário seja consumidor final.",
+        "solucao_proposta": "Obter a informação da UF de destino do destinatário. Com essa informação, verificar a alíquota interestadual de ICMS correta (4%, 7% ou 12%) com base na legislação vigente. Recalcular o ICMS devido e, se necessário, retificar a NFe. Verificar a necessidade de recolhimento do DIFAL, caso o destinatário seja consumidor final.",
+        "base_legal": "Constituição Federal, Art. 155, § 2º, VII; Lei Complementar nº 87/96 (Lei Kandir); Emenda Constitucional 87/2015; Convênio ICMS 52/91.",
+        "acao_imediata": "Entrar em contato com o destinatário para confirmar a UF de destino. Documentar a comunicação e a resposta obtida.",
+        "acao_preventiva": "Implementar um processo de validação de dados cadastrais dos clientes, incluindo a UF, no momento do cadastro e antes da emissão da NFe. Integrar a validação da UF de destino no sistema de emissão de notas fiscais.",
+        "grau_complexidade": "Médio",
+        "requer_consultoria": false,
+        "dados_necessarios": [
+          "UF de destino do destinatário"
+        ]
+      }
+    ],
+    "oportunidades_adicionais": [
+      {
+        "tipo": "Monofasico Autopeças",
+        "descricao": "Verificar enquadramento no regime monofásico para autopeças para o NCM 32141010. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.",
+        "beneficio_estimado": "Redução da carga tributária de PIS/COFINS.",
+        "aplicabilidade_lucro_real": "No Lucro Real, a correta identificação do regime monofásico permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar."
+      },
+      {
+        "tipo": "Monofasico Autopeças",
+        "descricao": "Verificar enquadramento no regime monofásico para autopeças para o NCM 35069110. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.",
+        "beneficio_estimado": "Redução da carga tributária de PIS/COFINS.",
+        "aplicabilidade_lucro_real": "No Lucro Real, a correta identificação do regime monofásico permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar."
+      },
+      {
+        "tipo": "Monofasico Autopeças",
+        "descricao": "Verificar enquadramento no regime monofásico para autopeças para o NCM 35061090. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.",
+        "beneficio_estimado": "Redução da carga tributária de PIS/COFINS.",
+        "aplicabilidade_lucro_real": "No Lucro Real, a correta identificação do regime monofásico permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar."
+      }
+    ],
+    "plano_acao_consolidado": {
+      "acoes_imediatas": [
+        "Obter a UF de destino do destinatário.",
+        "Verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 no regime monofásico de PIS/COFINS para autopeças."
+      ],
+      "acoes_medio_prazo": [
+        "Recalcular o ICMS devido com a alíquota correta.",
+        "Retificar a NFe, se necessário.",
+        "Implementar validação de dados cadastrais dos clientes.",
+        "Ajustar o sistema de emissão de notas fiscais para validar a UF de destino."
+      ],
+      "consultoria_necessaria": [
+        "Interpretação da legislação do regime monofásico para autopeças e enquadramento dos produtos específicos."
+      ],
+      "documentos_necessarios": [
+        "Cadastro completo do destinatário.",
+        "NFe original.",
+        "Tabela de alíquotas de ICMS interestadual.",
+        "Lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações)."
+      ],
+      "riscos_identificados": [
+        "Pagamento de ICMS em valor incorreto.",
+        "Autuações fiscais por emissão de NFe com informações incorretas.",
+        "Perda de oportunidades de redução da carga tributária de PIS/COFINS."
+      ]
+    },
+    "limitacoes_analise": "A análise foi limitada pela ausência da UF de destino do destinatário, impossibilitando a validação da alíquota de ICMS interestadual.",
+    "resumo_executivo": "A NFe apresenta uma discrepância crítica devido à falta da UF de destino, impactando o cálculo do ICMS. É crucial obter essa informação para corrigir a NFe e evitar riscos fiscais. Adicionalmente, há oportunidades de otimização tributária relacionadas ao regime monofásico de PIS/COFINS para autopeças. Recomenda-se verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 nesse regime para reduzir a carga tributária. Implementar validações de dados cadastrais e ajustar o sistema de emissão de notas fiscais são medidas preventivas importantes.",
+    "detalhes_tecnicos": "A alíquota interestadual de ICMS varia entre 4%, 7% e 12%, dependendo da UF de origem e destino, e do tipo de contribuinte. A correta identificação da alíquota é fundamental para o cálculo do ICMS devido e para evitar autuações fiscais. O regime monofásico de PIS/COFINS para autopeças estabelece que o imposto é recolhido apenas na primeira etapa da cadeia produtiva (indústria/importador), resultando em alíquota zero para o revendedor. A correta identificação dos produtos sujeitos a esse regime permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar.",
+    "modelo_utilizado": "gemini",
+    "timestamp_analise": "2025-10-30 14:08:55",
+    "relatorio_final": "# RELATÓRIO ANALÍTICO - TRATAMENTO DE DISCREPÂNCIAS\n\n** Status da Análise:** parcial\n**Regime Tributário:** LUCRO REAL\n**Discrepâncias Analisadas:** 1\n**Timestamp:** 2025-10-30 14:08:55\n\n## RESUMO EXECUTIVO\n\nA NFe apresenta uma discrepância crítica devido à falta da UF de destino, impactando o cálculo do ICMS. É crucial obter essa informação para corrigir a NFe e evitar riscos fiscais. Adicionalmente, há oportunidades de otimização tributária relacionadas ao regime monofásico de PIS/COFINS para autopeças. Recomenda-se verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 nesse regime para reduzir a carga tributária. Implementar validações de dados cadastrais e ajustar o sistema de emissão de notas fiscais são medidas preventivas importantes.\n\n## 🔬 ANÁLISES DETALHADAS\n\n### 1. Não foi informada a UF de destino, impossibilitando a verificação da alíquota interestadual de ICMS correta (4%, 7% ou 12%). 🟡 \n\n**Análise Técnica:**\nA legislação do ICMS estabelece alíquotas interestaduais diferenciadas com base na UF de origem e destino, bem como no tipo de contribuinte (contribuinte ou não contribuinte do ICMS). A ausência da UF de destino impede a correta determinação da alíquota aplicável e o cálculo do ICMS devido. No caso de operação interestadual, é necessário verificar se há aplicação do Diferencial de Alíquota (DIFAL) conforme Emenda Constitucional 87/2015, caso o destinatário seja consumidor final.\n\n**💡 Solução Proposta:**\nObter a informação da UF de destino do destinatário. Com essa informação, verificar a alíquota interestadual de ICMS correta (4%, 7% ou 12%) com base na legislação vigente. Recalcular o ICMS devido e, se necessário, retificar a NFe. Verificar a necessidade de recolhimento do DIFAL, caso o destinatário seja consumidor final.\n\n**⚖️ Base Legal:**\nConstituição Federal, Art. 155, § 2º, VII; Lei Complementar nº 87/96 (Lei Kandir); Emenda Constitucional 87/2015; Convênio ICMS 52/91.\n\n**Ação Imediata:**\nEntrar em contato com o destinatário para confirmar a UF de destino. Documentar a comunicação e a resposta obtida.\n\n**🛡️ Ação Preventiva:**\nImplementar um processo de validação de dados cadastrais dos clientes, incluindo a UF, no momento do cadastro e antes da emissão da NFe. Integrar a validação da UF de destino no sistema de emissão de notas fiscais.\n\n**Dados Necessários:**\n   • UF de destino do destinatário\n\n## OPORTUNIDADES ADICIONAIS IDENTIFICADAS\n\n**1. Monofasico Autopeças**\n   • **Descrição:** Verificar enquadramento no regime monofásico para autopeças para o NCM 32141010. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.\n   • **Benefício:** Redução da carga tributária de PIS/COFINS.\n   • **Lucro Real:** No Lucro Real, a correta identificação do regime monofásico permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar.\n\n**2. Monofasico Autopeças**\n   • **Descrição:** Verificar enquadramento no regime monofásico para autopeças para o NCM 35069110. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.\n   • **Benefício:** Redução da carga tributária de PIS/COFINS.\n   • **Lucro Real:** No Lucro Real, a correta identificação do regime monofásico permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar.\n\n**3. Monofasico Autopeças**\n   • **Descrição:** Verificar enquadramento no regime monofásico para autopeças para o NCM 35061090. Se aplicável, PIS/COFINS podem ser recolhidos apenas na indústria/importador, resultando em alíquota zero para o revendedor.\n   • **Benefício:** Redução da carga tributária de PIS/COFINS.\n   • **Lucro Real:** No Lucro Real, a correta identificação do regime monofásico permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar.\n\n## PLANO DE AÇÃO CONSOLIDADO\n\n### AÇÕES IMEDIATAS\n• Obter a UF de destino do destinatário.\n• Verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 no regime monofásico de PIS/COFINS para autopeças.\n\n### 📅 AÇÕES MÉDIO PRAZO\n• Recalcular o ICMS devido com a alíquota correta.\n• Retificar a NFe, se necessário.\n• Implementar validação de dados cadastrais dos clientes.\n• Ajustar o sistema de emissão de notas fiscais para validar a UF de destino.\n\n### 👨‍CONSULTORIA NECESSÁRIA\n• Interpretação da legislação do regime monofásico para autopeças e enquadramento dos produtos específicos.\n\n### DOCUMENTOS A PROVIDENCIAR\n• Cadastro completo do destinatário.\n• NFe original.\n• Tabela de alíquotas de ICMS interestadual.\n• Lista de autopeças sujeitas ao regime monofásico (Lei nº 10.485/02 e alterações).\n\n### RISCOS SE NÃO CORRIGIR\n• Pagamento de ICMS em valor incorreto.\n• Autuações fiscais por emissão de NFe com informações incorretas.\n• Perda de oportunidades de redução da carga tributária de PIS/COFINS.\n\n## LIMITAÇÕES DA ANÁLISE\n\nA análise foi limitada pela ausência da UF de destino do destinatário, impossibilitando a validação da alíquota de ICMS interestadual.\n\n## DETALHES TÉCNICOS\n\nA alíquota interestadual de ICMS varia entre 4%, 7% e 12%, dependendo da UF de origem e destino, e do tipo de contribuinte. A correta identificação da alíquota é fundamental para o cálculo do ICMS devido e para evitar autuações fiscais. O regime monofásico de PIS/COFINS para autopeças estabelece que o imposto é recolhido apenas na primeira etapa da cadeia produtiva (indústria/importador), resultando em alíquota zero para o revendedor. A correta identificação dos produtos sujeitos a esse regime permite a exclusão das receitas da base de cálculo do PIS/COFINS, reduzindo o imposto a pagar.\n\n---\n*Análise gerada pelo Analista Fiscal IA - Modelo: gemini*\n*Regime: LUCRO REAL - Sempre consulte um profissional contábil para casos complexos*"
+  },
+  "resultado_tributarista": {
+    "status": "parcial",
+    "regime_tributario": "LUCRO REAL",
+    "impostos_analisados": 3,
+    "delta_impostos": {
+      "icms": {
+        "valor_pago": 208.07,
+        "valor_devido": null,
+        "delta": null,
+        "percentual_diferenca": null,
+        "observacoes": "Não é possível calcular o valor devido de ICMS sem a informação da UF de destino. A alíquota interestadual (4%, 7% ou 12%) e a alíquota interna de SP são necessárias para o cálculo do ICMS e, se aplicável, do DIFAL."
+      },
+      "pis_cofins": {
+        "pis_pago": 25.16,
+        "pis_devido": null,
+        "cofins_pago": 115.95,
+        "cofins_devido": null,
+        "delta_total": null,
+        "observacoes": "Oportunidade de verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 no regime monofásico de PIS/COFINS para autopeças. Se confirmado, o PIS/COFINS devido seria zero para o revendedor. Sem essa confirmação, o cálculo do delta não é possível."
+      },
+      "ipi": {
+        "valor_pago": 13.71,
+        "valor_devido": 13.71,
+        "delta": 0.0,
+        "observacoes": "Considerando que o valor do IPI pago é igual ao valor devido, não há delta neste imposto."
+      }
+    },
+    "calculo_multas": {
+      "multas_potenciais": [
+        {
+          "tipo_infracao": "ICMS - Recolhimento a menor (alíquota incorreta)",
+          "base_calculo": null,
+          "percentual_multa": 20.0,
+          "valor_multa": null,
+          "base_legal": "Art. 85, I, 'e', Lei 6.374/89 (SP)",
+          "prazo_regularizacao": "Prazo para regularização depende da notificação fiscal."
+        },
+        {
+          "tipo_infracao": "PIS/COFINS - Não recolhimento (se aplicável monofasia)",
+          "base_calculo": null,
+          "percentual_multa": 20.0,
+          "valor_multa": null,
+          "base_legal": "Art. 44, I, Lei 9.430/96",
+          "prazo_regularizacao": "Prazo para regularização depende da notificação fiscal."
+        }
+      ],
+      "total_multas": null,
+      "multa_minima": 165.86,
+      "multa_maxima": null
+    },
+    "tabela_resumo": {
+      "cabecalho": [
+        "Imposto",
+        "Pago",
+        "Devido",
+        "Delta",
+        "% Diferença"
+      ],
+      "linhas": [
+        [
+          "ICMS",
+          "208.07",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "PIS",
+          "25.16",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "COFINS",
+          "115.95",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      ]
+    },
+    "analise_riscos": {
+      "risco_autuacao": "Médio",
+      "valor_total_exposicao": null,
+      "recomendacoes_urgentes": [
+        "Obter a UF de destino da NFe para cálculo correto do ICMS e DIFAL (se aplicável).",
+        "Verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 no regime monofásico de PIS/COFINS para autopeças."
+      ],
+      "prazos_criticos": [
+        "Prazos para retificação da NFe e recolhimento de eventuais diferenças de impostos."
+      ]
+    },
+    "resumo_executivo": "A análise tributária da NFe identificou a necessidade de obter a UF de destino para calcular corretamente o ICMS e o DIFAL (se aplicável). Além disso, há uma oportunidade de verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 no regime monofásico de PIS/COFINS para autopeças, o que pode resultar em uma redução significativa da carga tributária. A falta de informações precisas impede o cálculo exato do delta de impostos e das multas potenciais.",
+    "detalhes_tecnicos": "O cálculo do ICMS devido requer a alíquota interestadual correta (4%, 7% ou 12%) e a alíquota interna de SP. O DIFAL é calculado se o destinatário for consumidor final. O cálculo do PIS/COFINS devido depende da confirmação do enquadramento dos NCMs no regime monofásico. As multas foram calculadas com base na legislação tributária de SP e federal.",
+    "limitacoes_calculo": "A falta da UF de destino impede o cálculo preciso do ICMS e DIFAL. A ausência de confirmação sobre o regime monofásico impede o cálculo preciso do PIS/COFINS.",
+    "modelo_utilizado": "gemini",
+    "timestamp_calculo": "2025-10-30 14:09:06",
+    "relatorio_hibrido": "# 🧮 RELATÓRIO TRIBUTÁRIO - CÁLCULO DE DELTA E MULTAS\n\n** Status do Cálculo:** parcial\n**Regime Tributário:** LUCRO REAL\n**🔢 Impostos Analisados:** 3\n**Timestamp:** 2025-10-30 14:09:06\n\n## TABELA RESUMO - DELTA DE IMPOSTOS\n\n| Imposto | Pago | Devido | Delta | % Diferença |\n|---|---|---|---|---|\n| ICMS | 208.07 | N/A | N/A | N/A |\n| PIS | 25.16 | N/A | N/A | N/A |\n| COFINS | 115.95 | N/A | N/A | N/A |\n\n## ANÁLISE DETALHADA DO DELTA\n\n### 🏭 IPI\n- **Valor Pago:** R$ 13.71\n- **Valor Devido:** R$ 13.71\n- **Delta:** R$ 0.00\n- **Observações:** Considerando que o valor do IPI pago é igual ao valor devido, não há delta neste imposto.\n\n## CÁLCULO DE MULTAS POTENCIAIS\n\n### DETALHAMENTO DAS MULTAS\n\n**1. ICMS - Recolhimento a menor (alíquota incorreta)**\n   - Base de Cálculo: R$ 0.00\n   - Percentual: 20.00%\n   - Valor da Multa: R$ 0.00\n   - Base Legal: Art. 85, I, 'e', Lei 6.374/89 (SP)\n   - Prazo: Prazo para regularização depende da notificação fiscal.\n\n**2. PIS/COFINS - Não recolhimento (se aplicável monofasia)**\n   - Base de Cálculo: R$ 0.00\n   - Percentual: 20.00%\n   - Valor da Multa: R$ 0.00\n   - Base Legal: Art. 44, I, Lei 9.430/96\n   - Prazo: Prazo para regularização depende da notificação fiscal.\n\n## ANÁLISE DE RISCOS\n\n**🚨 Risco de Autuação:** Médio\n\n**Recomendações Urgentes:**\n- Obter a UF de destino da NFe para cálculo correto do ICMS e DIFAL (se aplicável).\n- Verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 no regime monofásico de PIS/COFINS para autopeças.\n\n**Prazos Críticos:**\n- Prazos para retificação da NFe e recolhimento de eventuais diferenças de impostos.\n\n## RESUMO EXECUTIVO\n\nA análise tributária da NFe identificou a necessidade de obter a UF de destino para calcular corretamente o ICMS e o DIFAL (se aplicável). Além disso, há uma oportunidade de verificar o enquadramento dos NCMs 32141010, 35069110 e 35061090 no regime monofásico de PIS/COFINS para autopeças, o que pode resultar em uma redução significativa da carga tributária. A falta de informações precisas impede o cálculo exato do delta de impostos e das multas potenciais.\n\n## DETALHES TÉCNICOS\n\nO cálculo do ICMS devido requer a alíquota interestadual correta (4%, 7% ou 12%) e a alíquota interna de SP. O DIFAL é calculado se o destinatário for consumidor final. O cálculo do PIS/COFINS devido depende da confirmação do enquadramento dos NCMs no regime monofásico. As multas foram calculadas com base na legislação tributária de SP e federal.\n\n## LIMITAÇÕES DO CÁLCULO\n\nA falta da UF de destino impede o cálculo preciso do ICMS e DIFAL. A ausência de confirmação sobre o regime monofásico impede o cálculo preciso do PIS/COFINS.\n\n---\n*Cálculo gerado pelo Tributarista Fiscal IA - Modelo: gemini*\n*Regime: LUCRO REAL - Sempre valide os cálculos com um profissional contábil*"
+  },
+  "resumo_execucao": {
+    "agentes_executados": 3,
+    "validador_status": "parcial",
+    "analista_status": "parcial",
+    "tributarista_status": "parcial",
+    "total_oportunidades": 3,
+    "total_discrepancias": 1,
+    "total_solucoes": 0,
+    "produtos_analisados": 5,
+    "execucao_completa": false
+  },
+  "timestamp_processamento": "2025-10-30T14:09:06.585865"
+}

@@ -2,18 +2,8 @@
 
 Uma aplicação web segura construída com Streamlit para ler e extrair informações de arquivos SPED Fiscal (.txt) e Notas Fiscais Eletrônicas (.xml), com sistema de autenticação e configuração de LLM.
 
-## 🚀 Funcionalidades Principais
+## 🚀 Funcionalidades
 
-### 🔐 **Sistema de Autenticação BYOK**
-- **Login seguro** com configuração de LLM personalizada
-- **Integração LangChain** para validação robusta de APIs
-- **Suporte a múltiplos providers**: OpenAI e Google Gemini
-- **Validação automática** de API keys em tempo real
-- **Detecção inteligente** do melhor modelo disponível
-- **Sistema de fallback** para máxima compatibilidade
-- **Armazenamento seguro** apenas na sessão local
-
-### 📊 **Processamento de Documentos**
 - **Leitura de arquivos SPED Fiscal (.txt)**: Extrai registros e campos dos blocos SPED
 - **Leitura de arquivos NF-e (.xml)**: Extrai informações principais como:
   - Dados do emitente e destinatário

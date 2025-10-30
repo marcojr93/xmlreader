@@ -70,10 +70,10 @@ class ValidadorFiscal:
                         
             with open(arquivo_regras, 'r', encoding='utf-8') as f:
                 self.banco_regras = json.load(f)
-                print(f"✅ Banco de regras carregado: {arquivo_regras}")
+                print(f"Banco de regras carregado: {arquivo_regras}")
                 
         except Exception as e:
-            print(f"⚠️ Erro ao carregar banco de regras: {e}")
+            print(f"Erro ao carregar banco de regras: {e}")
             self.banco_regras = {"regras_fiscais": {}, "oportunidades": {}, "alertas": {}}
 
     def _inicializar_llm_chain(self):
@@ -100,11 +100,11 @@ class ValidadorFiscal:
                     response = test_llm.invoke("OK")
                     if response and hasattr(response, 'content') and response.content:
                         self.llm = test_llm
-                        print(f"✅ LLM inicializada: {modelo}")
+                        print(f"LLM inicializada: {modelo}")
                         break
                         
                 except Exception as e:
-                    print(f"⚠️ Modelo {modelo} indisponível: {str(e)[:100]}")
+                    print(f"Modelo {modelo} indisponível: {str(e)[:100]}")
                     continue
 
             if not self.llm:
@@ -114,7 +114,7 @@ class ValidadorFiscal:
             self._criar_chain()
             
         except Exception as e:
-            print(f"❌ Erro ao inicializar LLM: {e}")
+            print(f"Erro ao inicializar LLM: {e}")
             self.llm = None
             self.chain = None
 
@@ -199,9 +199,16 @@ Analise estes dados contra as regras fiscais e forneça o resultado no formato J
             if not self.chain:
                 return self._erro_chain_nao_inicializada()
 
-            # Descriptografar dados para análise
-            cabecalho = self.processor.decrypt_sensitive_data(cabecalho_df)
-            produtos = self.processor.decrypt_sensitive_data(produtos_df)
+            # Descriptografar APENAS campos necessários para análise fiscal (SEM CNPJs)
+            campos_fiscais_permitidos = [
+                'Natureza da Operação', 'CFOP', 'UF', 'Valor Total', 'Data',
+                'Produto', 'NCM', 'Quantidade', 'Valor Unitário', 
+                'Alíquota ICMS', 'Valor ICMS', 'Alíquota PIS', 'Valor PIS',
+                'Alíquota COFINS', 'Valor COFINS', 'Alíquota IPI', 'Valor IPI'
+            ]
+            
+            cabecalho = self.processor.decrypt_sensitive_data(cabecalho_df, campos_fiscais_permitidos)
+            produtos = self.processor.decrypt_sensitive_data(produtos_df, campos_fiscais_permitidos)
             
             # Preparar dados para o prompt
             dados_cabecalho = self._formatar_cabecalho(cabecalho)
@@ -277,26 +284,23 @@ Analise estes dados contra as regras fiscais e forneça o resultado no formato J
 
     def _gerar_dropdown(self, resultado: Dict[str, Any]) -> str:
         """Gera relatório formatado para dropdown"""
-        dropdown = "## 📊 RELATÓRIO DE ANÁLISE FISCAL\n\n"
+        dropdown = "## RELATÓRIO DE ANÁLISE FISCAL\n\n"
         
         # Resumo geral
-        status_emoji = {"sucesso": "✅", "erro": "❌", "parcial": "⚠️"}
-        emoji = status_emoji.get(resultado.get('status', 'erro'), "❓")
-        
-        dropdown += f"**{emoji} Status:** {resultado.get('status', 'Desconhecido')}\n"
-        dropdown += f"**📦 Produtos analisados:** {resultado.get('produtos_analisados', 0)}\n"
-        dropdown += f"**🎯 Oportunidades:** {len(resultado.get('oportunidades', []))}\n"
-        dropdown += f"**⚠️ Discrepâncias:** {len(resultado.get('discrepancias', []))}\n\n"
+        dropdown += f"**Status:** {resultado.get('status', 'Desconhecido')}\n"
+        dropdown += f"**Produtos analisados:** {resultado.get('produtos_analisados', 0)}\n"
+        dropdown += f"**Oportunidades:** {len(resultado.get('oportunidades', []))}\n"
+        dropdown += f"**Discrepâncias:** {len(resultado.get('discrepancias', []))}\n\n"
         
         # Resumo executivo
         if resultado.get('resumo_executivo'):
-            dropdown += "### 📋 RESUMO EXECUTIVO\n\n"
+            dropdown += "### RESUMO EXECUTIVO\n\n"
             dropdown += resultado['resumo_executivo'] + "\n\n"
         
         # Oportunidades
         oportunidades = resultado.get('oportunidades', [])
         if oportunidades:
-            dropdown += "### 🎯 OPORTUNIDADES IDENTIFICADAS\n\n"
+            dropdown += "### OPORTUNIDADES IDENTIFICADAS\n\n"
             for i, oport in enumerate(oportunidades, 1):
                 dropdown += f"**{i}. {oport.get('tipo', 'N/A')}**\n"
                 dropdown += f"   • **Produto:** {oport.get('produto', 'N/A')}\n"
@@ -307,7 +311,7 @@ Analise estes dados contra as regras fiscais e forneça o resultado no formato J
         # Discrepâncias
         discrepancias = resultado.get('discrepancias', [])
         if discrepancias:
-            dropdown += "### ⚠️ DISCREPÂNCIAS ENCONTRADAS\n\n"
+            dropdown += "### DISCREPÂNCIAS ENCONTRADAS\n\n"
             for i, disc in enumerate(discrepancias, 1):
                 gravidade_emoji = {"Alta": "🔴", "Média": "🟡", "Baixa": "🟢"}
                 emoji_grav = gravidade_emoji.get(disc.get('gravidade', 'Média'), "⚪")
@@ -320,11 +324,11 @@ Analise estes dados contra as regras fiscais e forneça o resultado no formato J
         
         # Detalhes técnicos
         if resultado.get('detalhes_tecnicos'):
-            dropdown += "### 🔧 DETALHES TÉCNICOS\n\n"
+            dropdown += "### DETALHES TÉCNICOS\n\n"
             dropdown += resultado['detalhes_tecnicos'] + "\n\n"
         
         if not oportunidades and not discrepancias:
-            dropdown += "### ✅ CONFORMIDADE FISCAL\n\n"
+            dropdown += "### CONFORMIDADE FISCAL\n\n"
             dropdown += "Não foram identificadas oportunidades significativas ou discrepâncias críticas na análise realizada.\n"
         
         return dropdown
@@ -336,7 +340,7 @@ Analise estes dados contra as regras fiscais e forneça o resultado no formato J
             'produtos_analisados': 0,
             'oportunidades': [],
             'discrepancias': [],
-            'resumo_dropdown': "❌ **Erro:** LLM não inicializada. Verifique a configuração da GOOGLE_API_KEY.",
+            'resumo_dropdown': "**Erro:** LLM não inicializada. Verifique a configuração da GOOGLE_API_KEY.",
             'banco_regras_carregado': bool(self.banco_regras.get('regras_fiscais')),
             'modelo_utilizado': 'N/A'
         }
@@ -348,7 +352,7 @@ Analise estes dados contra as regras fiscais e forneça o resultado no formato J
             'produtos_analisados': 0,
             'oportunidades': [],
             'discrepancias': [],
-            'resumo_dropdown': f"❌ **Erro de formato:** A LLM retornou resposta em formato inválido.\n\nResposta: {resposta[:500]}...",
+            'resumo_dropdown': f"**Erro de formato:** A LLM retornou resposta em formato inválido.\n\nResposta: {resposta[:500]}...",
             'banco_regras_carregado': bool(self.banco_regras.get('regras_fiscais')),
             'modelo_utilizado': getattr(self.llm, 'model_name', 'gemini') if self.llm else 'N/A'
         }
@@ -360,7 +364,7 @@ Analise estes dados contra as regras fiscais e forneça o resultado no formato J
             'produtos_analisados': 0,
             'oportunidades': [],
             'discrepancias': [],
-            'resumo_dropdown': f"❌ **Erro na análise:** {erro}",
+            'resumo_dropdown': f"**Erro na análise:** {erro}",
             'banco_regras_carregado': bool(self.banco_regras.get('regras_fiscais')),
             'modelo_utilizado': getattr(self.llm, 'model_name', 'gemini') if self.llm else 'N/A'
         }
@@ -400,7 +404,7 @@ def buscar_regras_fiscais_nfe(cabecalho_criptografado: pd.DataFrame, produtos_cr
             'produtos_analisados': 0,
             'oportunidades': [],
             'discrepancias': [],
-            'resumo_dropdown': f"❌ **Erro crítico:** {str(e)}",
+            'resumo_dropdown': f"**Erro crítico:** {str(e)}",
             'banco_regras_carregado': False,
             'modelo_utilizado': 'N/A'
         }
@@ -411,7 +415,7 @@ verificar_regras_fiscais_nfe = buscar_regras_fiscais_nfe
 
 
 if __name__ == "__main__":
-    print("🚀 Validador Fiscal com LangChain - Teste Local\n")
+    print("Validador Fiscal com LangChain - Teste Local\n")
     
     # Teste básico
     cabecalho_teste = pd.DataFrame({
@@ -435,12 +439,12 @@ if __name__ == "__main__":
     # Executar análise
     resultado = buscar_regras_fiscais_nfe(cabecalho_teste, produtos_teste)
     
-    print(f"📊 Status: {resultado['status']}")
-    print(f"📦 Produtos analisados: {resultado['produtos_analisados']}")
-    print(f"🎯 Oportunidades: {len(resultado['oportunidades'])}")
-    print(f"⚠️ Discrepâncias: {len(resultado['discrepancias'])}")
-    print(f"🤖 Modelo: {resultado.get('modelo_utilizado', 'N/A')}")
-    print(f"📋 Banco de regras: {'✅' if resultado['banco_regras_carregado'] else '❌'}")
+    print(f"Status: {resultado['status']}")
+    print(f"Produtos analisados: {resultado['produtos_analisados']}")
+    print(f"Oportunidades: {len(resultado['oportunidades'])}")
+    print(f"Discrepâncias: {len(resultado['discrepancias'])}")
+    print(f"Modelo: {resultado.get('modelo_utilizado', 'N/A')}")
+    print(f"Banco de regras: {'OK' if resultado['banco_regras_carregado'] else 'ERRO'}")
     
     print("\n" + "="*50)
     print("RELATÓRIO COMPLETO:")
