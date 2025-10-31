@@ -1,6 +1,6 @@
 # 📄 XML Reader - Leitor de Arquivos SPED e NF-e
 
-Uma aplicação web segura construída com Streamlit para ler e extrair informações de arquivos SPED Fiscal (.txt) e Notas Fiscais Eletrônicas (.xml), com sistema de autenticação e configuração de LLM.
+Uma aplicação web segura construída com Streamlit para ler e extrair informações de arquivos Notas Fiscais Eletrônicas (.xml), com sistema de autenticação e configuração de LLM.
 
 ## 🚀 Funcionalidades
 
