@@ -31,18 +31,21 @@ class WidthConfig(google.protobuf.message.Message):
     USE_STRETCH_FIELD_NUMBER: builtins.int
     USE_CONTENT_FIELD_NUMBER: builtins.int
     PIXEL_WIDTH_FIELD_NUMBER: builtins.int
+    REM_WIDTH_FIELD_NUMBER: builtins.int
     use_stretch: builtins.bool
     use_content: builtins.bool
     pixel_width: builtins.int
+    rem_width: builtins.float
     def __init__(
         self,
         *,
         use_stretch: builtins.bool = ...,
         use_content: builtins.bool = ...,
         pixel_width: builtins.int = ...,
+        rem_width: builtins.float = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["pixel_width", b"pixel_width", "use_content", b"use_content", "use_stretch", b"use_stretch", "width_spec", b"width_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["pixel_width", b"pixel_width", "use_content", b"use_content", "use_stretch", b"use_stretch", "width_spec", b"width_spec"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["width_spec", b"width_spec"]) -> typing.Literal["use_stretch", "use_content", "pixel_width"] | None: ...
+    def HasField(self, field_name: typing.Literal["pixel_width", b"pixel_width", "rem_width", b"rem_width", "use_content", b"use_content", "use_stretch", b"use_stretch", "width_spec", b"width_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["pixel_width", b"pixel_width", "rem_width", b"rem_width", "use_content", b"use_content", "use_stretch", b"use_stretch", "width_spec", b"width_spec"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["width_spec", b"width_spec"]) -> typing.Literal["use_stretch", "use_content", "pixel_width", "rem_width"] | None: ...
 
 global___WidthConfig = WidthConfig

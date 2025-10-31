@@ -70,7 +70,9 @@ class PlotlyChart(google.protobuf.message.Message):
     URL_FIELD_NUMBER: builtins.int
     FIGURE_FIELD_NUMBER: builtins.int
     use_container_width: builtins.bool
-    """If True, will overwrite the chart width spec to fit to container."""
+    """DEPRECATED: If True, will overwrite the chart width spec to fit to container.
+    Use widthConfig in layout configuration instead.
+    """
     theme: builtins.str
     """override the properties with a theme. Currently, only "streamlit" or None are accepted."""
     id: builtins.str

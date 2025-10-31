@@ -321,12 +321,14 @@ class Block(google.protobuf.message.Message):
         HELP_FIELD_NUMBER: builtins.int
         DISABLED_FIELD_NUMBER: builtins.int
         ICON_FIELD_NUMBER: builtins.int
+        TYPE_FIELD_NUMBER: builtins.int
         label: builtins.str
         use_container_width: builtins.bool
         """DEPRECATED: We use widthConfig on the top-level which is shared."""
         help: builtins.str
         disabled: builtins.bool
         icon: builtins.str
+        type: builtins.str
         def __init__(
             self,
             *,
@@ -335,8 +337,9 @@ class Block(google.protobuf.message.Message):
             help: builtins.str = ...,
             disabled: builtins.bool = ...,
             icon: builtins.str = ...,
+            type: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["disabled", b"disabled", "help", b"help", "icon", b"icon", "label", b"label", "use_container_width", b"use_container_width"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["disabled", b"disabled", "help", b"help", "icon", b"icon", "label", b"label", "type", b"type", "use_container_width", b"use_container_width"]) -> None: ...
 
     @typing.final
     class ChatMessage(google.protobuf.message.Message):

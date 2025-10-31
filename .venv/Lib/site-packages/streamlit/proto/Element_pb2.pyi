@@ -26,6 +26,7 @@ import streamlit.proto.Arrow_pb2
 import streamlit.proto.AudioInput_pb2
 import streamlit.proto.Audio_pb2
 import streamlit.proto.Balloons_pb2
+import streamlit.proto.BidiComponent_pb2
 import streamlit.proto.BokehChart_pb2
 import streamlit.proto.ButtonGroup_pb2
 import streamlit.proto.Button_pb2
@@ -64,6 +65,7 @@ import streamlit.proto.Selectbox_pb2
 import streamlit.proto.Skeleton_pb2
 import streamlit.proto.Slider_pb2
 import streamlit.proto.Snow_pb2
+import streamlit.proto.Space_pb2
 import streamlit.proto.Spinner_pb2
 import streamlit.proto.TextArea_pb2
 import streamlit.proto.TextInput_pb2
@@ -92,6 +94,7 @@ class Element(google.protobuf.message.Message):
     AUDIO_FIELD_NUMBER: builtins.int
     AUDIO_INPUT_FIELD_NUMBER: builtins.int
     BALLOONS_FIELD_NUMBER: builtins.int
+    BIDI_COMPONENT_FIELD_NUMBER: builtins.int
     BOKEH_CHART_FIELD_NUMBER: builtins.int
     BUTTON_FIELD_NUMBER: builtins.int
     BUTTON_GROUP_FIELD_NUMBER: builtins.int
@@ -128,6 +131,7 @@ class Element(google.protobuf.message.Message):
     SKELETON_FIELD_NUMBER: builtins.int
     SLIDER_FIELD_NUMBER: builtins.int
     SNOW_FIELD_NUMBER: builtins.int
+    SPACE_FIELD_NUMBER: builtins.int
     SPINNER_FIELD_NUMBER: builtins.int
     TEXT_FIELD_NUMBER: builtins.int
     TEXT_AREA_FIELD_NUMBER: builtins.int
@@ -158,6 +162,8 @@ class Element(google.protobuf.message.Message):
     def audio_input(self) -> streamlit.proto.AudioInput_pb2.AudioInput: ...
     @property
     def balloons(self) -> streamlit.proto.Balloons_pb2.Balloons: ...
+    @property
+    def bidi_component(self) -> streamlit.proto.BidiComponent_pb2.BidiComponent: ...
     @property
     def bokeh_chart(self) -> streamlit.proto.BokehChart_pb2.BokehChart: ...
     @property
@@ -235,6 +241,8 @@ class Element(google.protobuf.message.Message):
     @property
     def snow(self) -> streamlit.proto.Snow_pb2.Snow: ...
     @property
+    def space(self) -> streamlit.proto.Space_pb2.Space: ...
+    @property
     def spinner(self) -> streamlit.proto.Spinner_pb2.Spinner: ...
     @property
     def text(self) -> streamlit.proto.Text_pb2.Text: ...
@@ -256,7 +264,7 @@ class Element(google.protobuf.message.Message):
     def heading(self) -> streamlit.proto.Heading_pb2.Heading: ...
     @property
     def code(self) -> streamlit.proto.Code_pb2.Code:
-        """Next ID: 59"""
+        """Next ID: 61"""
 
     def __init__(
         self,
@@ -270,6 +278,7 @@ class Element(google.protobuf.message.Message):
         audio: streamlit.proto.Audio_pb2.Audio | None = ...,
         audio_input: streamlit.proto.AudioInput_pb2.AudioInput | None = ...,
         balloons: streamlit.proto.Balloons_pb2.Balloons | None = ...,
+        bidi_component: streamlit.proto.BidiComponent_pb2.BidiComponent | None = ...,
         bokeh_chart: streamlit.proto.BokehChart_pb2.BokehChart | None = ...,
         button: streamlit.proto.Button_pb2.Button | None = ...,
         button_group: streamlit.proto.ButtonGroup_pb2.ButtonGroup | None = ...,
@@ -306,6 +315,7 @@ class Element(google.protobuf.message.Message):
         skeleton: streamlit.proto.Skeleton_pb2.Skeleton | None = ...,
         slider: streamlit.proto.Slider_pb2.Slider | None = ...,
         snow: streamlit.proto.Snow_pb2.Snow | None = ...,
+        space: streamlit.proto.Space_pb2.Space | None = ...,
         spinner: streamlit.proto.Spinner_pb2.Spinner | None = ...,
         text: streamlit.proto.Text_pb2.Text | None = ...,
         text_area: streamlit.proto.TextArea_pb2.TextArea | None = ...,
@@ -317,13 +327,13 @@ class Element(google.protobuf.message.Message):
         heading: streamlit.proto.Heading_pb2.Heading | None = ...,
         code: streamlit.proto.Code_pb2.Code | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_height_config", b"_height_config", "_width_config", b"_width_config", "alert", b"alert", "arrow_data_frame", b"arrow_data_frame", "arrow_table", b"arrow_table", "arrow_vega_lite_chart", b"arrow_vega_lite_chart", "audio", b"audio", "audio_input", b"audio_input", "balloons", b"balloons", "bokeh_chart", b"bokeh_chart", "button", b"button", "button_group", b"button_group", "camera_input", b"camera_input", "chat_input", b"chat_input", "checkbox", b"checkbox", "code", b"code", "color_picker", b"color_picker", "component_instance", b"component_instance", "data_frame", b"data_frame", "date_input", b"date_input", "deck_gl_json_chart", b"deck_gl_json_chart", "doc_string", b"doc_string", "download_button", b"download_button", "empty", b"empty", "exception", b"exception", "favicon", b"favicon", "file_uploader", b"file_uploader", "graphviz_chart", b"graphviz_chart", "heading", b"heading", "height_config", b"height_config", "html", b"html", "iframe", b"iframe", "imgs", b"imgs", "json", b"json", "link_button", b"link_button", "markdown", b"markdown", "metric", b"metric", "multiselect", b"multiselect", "number_input", b"number_input", "page_link", b"page_link", "plotly_chart", b"plotly_chart", "progress", b"progress", "radio", b"radio", "selectbox", b"selectbox", "skeleton", b"skeleton", "slider", b"slider", "snow", b"snow", "spinner", b"spinner", "table", b"table", "text", b"text", "text_area", b"text_area", "text_input", b"text_input", "time_input", b"time_input", "toast", b"toast", "type", b"type", "vega_lite_chart", b"vega_lite_chart", "video", b"video", "width_config", b"width_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_height_config", b"_height_config", "_width_config", b"_width_config", "alert", b"alert", "arrow_data_frame", b"arrow_data_frame", "arrow_table", b"arrow_table", "arrow_vega_lite_chart", b"arrow_vega_lite_chart", "audio", b"audio", "audio_input", b"audio_input", "balloons", b"balloons", "bokeh_chart", b"bokeh_chart", "button", b"button", "button_group", b"button_group", "camera_input", b"camera_input", "chat_input", b"chat_input", "checkbox", b"checkbox", "code", b"code", "color_picker", b"color_picker", "component_instance", b"component_instance", "data_frame", b"data_frame", "date_input", b"date_input", "deck_gl_json_chart", b"deck_gl_json_chart", "doc_string", b"doc_string", "download_button", b"download_button", "empty", b"empty", "exception", b"exception", "favicon", b"favicon", "file_uploader", b"file_uploader", "graphviz_chart", b"graphviz_chart", "heading", b"heading", "height_config", b"height_config", "html", b"html", "iframe", b"iframe", "imgs", b"imgs", "json", b"json", "link_button", b"link_button", "markdown", b"markdown", "metric", b"metric", "multiselect", b"multiselect", "number_input", b"number_input", "page_link", b"page_link", "plotly_chart", b"plotly_chart", "progress", b"progress", "radio", b"radio", "selectbox", b"selectbox", "skeleton", b"skeleton", "slider", b"slider", "snow", b"snow", "spinner", b"spinner", "table", b"table", "text", b"text", "text_area", b"text_area", "text_input", b"text_input", "time_input", b"time_input", "toast", b"toast", "type", b"type", "vega_lite_chart", b"vega_lite_chart", "video", b"video", "width_config", b"width_config"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_height_config", b"_height_config", "_width_config", b"_width_config", "alert", b"alert", "arrow_data_frame", b"arrow_data_frame", "arrow_table", b"arrow_table", "arrow_vega_lite_chart", b"arrow_vega_lite_chart", "audio", b"audio", "audio_input", b"audio_input", "balloons", b"balloons", "bidi_component", b"bidi_component", "bokeh_chart", b"bokeh_chart", "button", b"button", "button_group", b"button_group", "camera_input", b"camera_input", "chat_input", b"chat_input", "checkbox", b"checkbox", "code", b"code", "color_picker", b"color_picker", "component_instance", b"component_instance", "data_frame", b"data_frame", "date_input", b"date_input", "deck_gl_json_chart", b"deck_gl_json_chart", "doc_string", b"doc_string", "download_button", b"download_button", "empty", b"empty", "exception", b"exception", "favicon", b"favicon", "file_uploader", b"file_uploader", "graphviz_chart", b"graphviz_chart", "heading", b"heading", "height_config", b"height_config", "html", b"html", "iframe", b"iframe", "imgs", b"imgs", "json", b"json", "link_button", b"link_button", "markdown", b"markdown", "metric", b"metric", "multiselect", b"multiselect", "number_input", b"number_input", "page_link", b"page_link", "plotly_chart", b"plotly_chart", "progress", b"progress", "radio", b"radio", "selectbox", b"selectbox", "skeleton", b"skeleton", "slider", b"slider", "snow", b"snow", "space", b"space", "spinner", b"spinner", "table", b"table", "text", b"text", "text_area", b"text_area", "text_input", b"text_input", "time_input", b"time_input", "toast", b"toast", "type", b"type", "vega_lite_chart", b"vega_lite_chart", "video", b"video", "width_config", b"width_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_height_config", b"_height_config", "_width_config", b"_width_config", "alert", b"alert", "arrow_data_frame", b"arrow_data_frame", "arrow_table", b"arrow_table", "arrow_vega_lite_chart", b"arrow_vega_lite_chart", "audio", b"audio", "audio_input", b"audio_input", "balloons", b"balloons", "bidi_component", b"bidi_component", "bokeh_chart", b"bokeh_chart", "button", b"button", "button_group", b"button_group", "camera_input", b"camera_input", "chat_input", b"chat_input", "checkbox", b"checkbox", "code", b"code", "color_picker", b"color_picker", "component_instance", b"component_instance", "data_frame", b"data_frame", "date_input", b"date_input", "deck_gl_json_chart", b"deck_gl_json_chart", "doc_string", b"doc_string", "download_button", b"download_button", "empty", b"empty", "exception", b"exception", "favicon", b"favicon", "file_uploader", b"file_uploader", "graphviz_chart", b"graphviz_chart", "heading", b"heading", "height_config", b"height_config", "html", b"html", "iframe", b"iframe", "imgs", b"imgs", "json", b"json", "link_button", b"link_button", "markdown", b"markdown", "metric", b"metric", "multiselect", b"multiselect", "number_input", b"number_input", "page_link", b"page_link", "plotly_chart", b"plotly_chart", "progress", b"progress", "radio", b"radio", "selectbox", b"selectbox", "skeleton", b"skeleton", "slider", b"slider", "snow", b"snow", "space", b"space", "spinner", b"spinner", "table", b"table", "text", b"text", "text_area", b"text_area", "text_input", b"text_input", "time_input", b"time_input", "toast", b"toast", "type", b"type", "vega_lite_chart", b"vega_lite_chart", "video", b"video", "width_config", b"width_config"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_height_config", b"_height_config"]) -> typing.Literal["height_config"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_width_config", b"_width_config"]) -> typing.Literal["width_config"] | None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["alert", "arrow_data_frame", "arrow_table", "arrow_vega_lite_chart", "audio", "audio_input", "balloons", "bokeh_chart", "button", "button_group", "download_button", "camera_input", "chat_input", "checkbox", "color_picker", "component_instance", "data_frame", "table", "date_input", "deck_gl_json_chart", "doc_string", "empty", "exception", "favicon", "file_uploader", "graphviz_chart", "html", "iframe", "imgs", "json", "link_button", "markdown", "metric", "multiselect", "number_input", "page_link", "plotly_chart", "progress", "radio", "selectbox", "skeleton", "slider", "snow", "spinner", "text", "text_area", "text_input", "time_input", "toast", "vega_lite_chart", "video", "heading", "code"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["alert", "arrow_data_frame", "arrow_table", "arrow_vega_lite_chart", "audio", "audio_input", "balloons", "bidi_component", "bokeh_chart", "button", "button_group", "download_button", "camera_input", "chat_input", "checkbox", "color_picker", "component_instance", "data_frame", "table", "date_input", "deck_gl_json_chart", "doc_string", "empty", "exception", "favicon", "file_uploader", "graphviz_chart", "html", "iframe", "imgs", "json", "link_button", "markdown", "metric", "multiselect", "number_input", "page_link", "plotly_chart", "progress", "radio", "selectbox", "skeleton", "slider", "snow", "space", "spinner", "text", "text_area", "text_input", "time_input", "toast", "vega_lite_chart", "video", "heading", "code"] | None: ...
 
 global___Element = Element

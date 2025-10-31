@@ -69,15 +69,21 @@ class DeckGlJsonChart(google.protobuf.message.Message):
     """The json of the pydeck object (https://deckgl.readthedocs.io/en/latest/deck.html)"""
     tooltip: builtins.str
     use_container_width: builtins.bool
-    """If True, will overwrite the chart width spec to fit to container."""
+    """DEPRECATED: If True, will overwrite the chart width spec to fit to container.
+    Use widthConfig in layout configuration instead.
+    """
     id: builtins.str
     """ID, required for selection events."""
     mapbox_token: builtins.str
     """The Mapbox token, if any."""
     width: builtins.int
-    """Width in pixels"""
+    """DEPRECATED: Width in pixels
+    Use widthConfig in layout configuration instead.
+    """
     height: builtins.int
-    """Height in pixels"""
+    """DEPRECATED: Height in pixels
+    Use heightConfig in layout configuration instead.
+    """
     form_id: builtins.str
     """The form ID of the widget, this is required if the chart has selection events"""
     @property

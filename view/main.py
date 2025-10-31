@@ -222,27 +222,96 @@ def welcome_screen():
                 if processar_agentes:
                     # Container para log em tempo real
                     st.subheader("Processamento com Agentes IA")
-                    log_container = st.container()
-                    progress_bar = st.progress(0)
                     
-                    # Lista para capturar logs
+                    # Criar containers organizados
+                    col1, col2 = st.columns([2, 1])
+                    
+                    with col1:
+                        st.subheader("Log de Processamento")
+                        log_placeholder = st.empty()
+                        
+                    with col2:
+                        st.subheader("Progresso")
+                        progress_bar = st.progress(0)
+                        status_placeholder = st.empty()
+                    
+                    # Lista para capturar logs estruturados
                     if 'log_processamento' not in st.session_state:
                         st.session_state.log_processamento = []
                     
                     def callback_status(mensagem):
-                        st.session_state.log_processamento.append(mensagem)
-                        with log_container:
-                            # Mostrar todos os logs
-                            for log in st.session_state.log_processamento:
-                                st.write(log)
+                        import datetime
+                        timestamp = datetime.datetime.now().strftime("%H:%M:%S")
                         
-                        # Atualizar barra de progresso
+                        # Determinar o agente e status da mensagem
+                        agente = "Sistema"
+                        status = "Info"
+                        
                         if "Validador" in mensagem:
-                            progress_bar.progress(33)
+                            agente = "Validador"
+                            status = "Processando"
                         elif "Analista" in mensagem:
-                            progress_bar.progress(66)
+                            agente = "Analista"
+                            status = "Processando"
                         elif "Tributarista" in mensagem:
-                            progress_bar.progress(100)
+                            agente = "Tributarista"
+                            status = "Processando"
+                        elif "finalizado" in mensagem.lower() or "concluído" in mensagem.lower():
+                            status = "✅ Concluído"
+                        elif "erro" in mensagem.lower():
+                            status = "❌ Erro"
+                        
+                        # Adicionar log estruturado
+                        log_entry = {
+                            "Timestamp": timestamp,
+                            "Agente": agente,
+                            "Status": status,
+                            "Mensagem": mensagem
+                        }
+                        st.session_state.log_processamento.append(log_entry)
+                        
+                        # Criar DataFrame dos logs
+                        df_logs = pd.DataFrame(st.session_state.log_processamento)
+                        
+                        # Exibir grid com rolagem
+                        with log_placeholder.container():
+                            st.dataframe(
+                                df_logs,
+                                use_container_width=True,
+                                height=300,  # Altura fixa com rolagem
+                                column_config={
+                                    "Timestamp": st.column_config.TextColumn("Tempo", width="small"),
+                                    "Agente": st.column_config.TextColumn("Agente", width="medium"),
+                                    "Status": st.column_config.TextColumn("Status", width="medium"),
+                                    "Mensagem": st.column_config.TextColumn("Detalhes", width="large")
+                                },
+                                hide_index=True
+                            )
+                        
+                        # Atualizar barra de progresso e status
+                        progresso = 0
+                        status_atual = "Iniciando..."
+                        
+                        if "Validador" in mensagem:
+                            progresso = 33
+                            status_atual = "Executando Validador..."
+                        elif "Analista" in mensagem:
+                            progresso = 66
+                            status_atual = "Executando Analista..."
+                        elif "Tributarista" in mensagem:
+                            progresso = 100
+                            status_atual = "Executando Tributarista..."
+                        elif "finalizado" in mensagem.lower():
+                            progresso = 100
+                            status_atual = "✅ Processamento Concluído!"
+                        
+                        progress_bar.progress(progresso)
+                        status_placeholder.info(f"**Status:** {status_atual}")
+                        
+                        # Scroll automático para o último log (simular)
+                        if len(st.session_state.log_processamento) > 10:
+                            # Manter apenas os últimos 50 logs para performance
+                            st.session_state.log_processamento = st.session_state.log_processamento[-50:]
                     
                     try:
                         # Executar orquestração dos 3 agentes
@@ -320,6 +389,96 @@ def exibir_resultados_processamento():
         
         # Exibir resumo executivo
         st.success("Processamento concluído com sucesso!")
+        
+        # Seção do histórico de logs
+        with st.expander("📋 **Histórico de Processamento**", expanded=False):
+            if 'log_processamento' in st.session_state and st.session_state.log_processamento:
+                df_logs_historico = pd.DataFrame(st.session_state.log_processamento)
+                
+                # Filtros para o histórico
+                col_filtro1, col_filtro2 = st.columns(2)
+                
+                with col_filtro1:
+                    agentes_disponiveis = ["Todos"] + df_logs_historico["Agente"].unique().tolist()
+                    filtro_agente = st.selectbox("Filtrar por Agente:", agentes_disponiveis)
+                
+                with col_filtro2:
+                    status_disponiveis = ["Todos"] + df_logs_historico["Status"].unique().tolist()
+                    filtro_status = st.selectbox("Filtrar por Status:", status_disponiveis)
+                
+                # Aplicar filtros
+                df_filtrado = df_logs_historico.copy()
+                if filtro_agente != "Todos":
+                    df_filtrado = df_filtrado[df_filtrado["Agente"] == filtro_agente]
+                if filtro_status != "Todos":
+                    df_filtrado = df_filtrado[df_filtrado["Status"] == filtro_status]
+                
+                # Exibir grid filtrado
+                st.dataframe(
+                    df_filtrado,
+                    use_container_width=True,
+                    height=400,
+                    column_config={
+                        "Timestamp": st.column_config.TextColumn("Tempo", width="small"),
+                        "Agente": st.column_config.TextColumn("Agente", width="medium"),
+                        "Status": st.column_config.TextColumn("Status", width="medium"),
+                        "Mensagem": st.column_config.TextColumn("Detalhes", width="large")
+                    },
+                    hide_index=True
+                )
+                
+                # Estatísticas do processamento
+                st.subheader("📊 Estatísticas do Processamento")
+                col_stat1, col_stat2, col_stat3 = st.columns(3)
+                
+                with col_stat1:
+                    total_logs = len(df_logs_historico)
+                    st.metric("Total de Logs", total_logs)
+                
+                with col_stat2:
+                    agentes_executados = df_logs_historico["Agente"].nunique()
+                    st.metric("Agentes Executados", agentes_executados)
+                
+                with col_stat3:
+                    status_sucesso = len(df_logs_historico[df_logs_historico["Status"].str.contains("Concluído", na=False)])
+                    st.metric("Etapas Concluídas", status_sucesso)
+                
+                # Botões de ação para os logs
+                col_btn1, col_btn2, col_btn3 = st.columns(3)
+                
+                with col_btn1:
+                    if st.button("🗑️ Limpar Logs", help="Remove todos os logs do histórico"):
+                        st.session_state.log_processamento = []
+                        st.rerun()
+                
+                with col_btn2:
+                    # Exportar logs para CSV
+                    csv_logs = df_filtrado.to_csv(index=False)
+                    st.download_button(
+                        label="📄 Exportar Logs (CSV)",
+                        data=csv_logs,
+                        file_name=f"logs_processamento_{timestamp_proc}.csv",
+                        mime="text/csv",
+                        help="Baixa os logs filtrados em formato CSV"
+                    )
+                
+                with col_btn3:
+                    # Exportar logs para Excel  
+                    buffer_logs = BytesIO()
+                    with pd.ExcelWriter(buffer_logs, engine='xlsxwriter') as writer:
+                        df_filtrado.to_excel(writer, sheet_name='Logs_Processamento', index=False)
+                    buffer_logs.seek(0)
+                    
+                    st.download_button(
+                        label="📊 Exportar Logs (Excel)",
+                        data=buffer_logs.getvalue(),
+                        file_name=f"logs_processamento_{timestamp_proc}.xlsx",
+                        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        help="Baixa os logs filtrados em formato Excel"
+                    )
+                    
+            else:
+                st.info("Nenhum log de processamento disponível.")
         
         # Mostrar resumo executivo
         col1, col2, col3, col4 = st.columns(4)

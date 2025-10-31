@@ -67,6 +67,7 @@ class WidgetState(google.protobuf.message.Message):
     FILE_UPLOADER_STATE_VALUE_FIELD_NUMBER: builtins.int
     STRING_TRIGGER_VALUE_FIELD_NUMBER: builtins.int
     CHAT_INPUT_VALUE_FIELD_NUMBER: builtins.int
+    JSON_TRIGGER_VALUE_FIELD_NUMBER: builtins.int
     id: builtins.str
     trigger_value: builtins.bool
     """trigger_value is for buttons. A button's value needs to
@@ -82,6 +83,14 @@ class WidgetState(google.protobuf.message.Message):
     string_value: builtins.str
     json_value: builtins.str
     bytes_value: builtins.bytes
+    json_trigger_value: builtins.str
+    """Transient trigger payload transport (JSON-stringified).
+    - Purpose: carry per-run, non-persistent trigger data across the wire.
+    - Shape: JSON object or JSON array (batched within a single update).
+    - Lifecycle: treated as a trigger; cleared after each script run.
+    Use json_value for persistent state; use json_trigger_value for
+    auto-resetting payloads.
+    """
     @property
     def double_array_value(self) -> streamlit.proto.Common_pb2.DoubleArray: ...
     @property
@@ -122,9 +131,10 @@ class WidgetState(google.protobuf.message.Message):
         file_uploader_state_value: streamlit.proto.Common_pb2.FileUploaderState | None = ...,
         string_trigger_value: streamlit.proto.Common_pb2.StringTriggerValue | None = ...,
         chat_input_value: streamlit.proto.Common_pb2.ChatInputValue | None = ...,
+        json_trigger_value: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["arrow_value", b"arrow_value", "bool_value", b"bool_value", "bytes_value", b"bytes_value", "chat_input_value", b"chat_input_value", "double_array_value", b"double_array_value", "double_value", b"double_value", "file_uploader_state_value", b"file_uploader_state_value", "int_array_value", b"int_array_value", "int_value", b"int_value", "json_value", b"json_value", "string_array_value", b"string_array_value", "string_trigger_value", b"string_trigger_value", "string_value", b"string_value", "trigger_value", b"trigger_value", "value", b"value"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["arrow_value", b"arrow_value", "bool_value", b"bool_value", "bytes_value", b"bytes_value", "chat_input_value", b"chat_input_value", "double_array_value", b"double_array_value", "double_value", b"double_value", "file_uploader_state_value", b"file_uploader_state_value", "id", b"id", "int_array_value", b"int_array_value", "int_value", b"int_value", "json_value", b"json_value", "string_array_value", b"string_array_value", "string_trigger_value", b"string_trigger_value", "string_value", b"string_value", "trigger_value", b"trigger_value", "value", b"value"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["value", b"value"]) -> typing.Literal["trigger_value", "bool_value", "double_value", "int_value", "string_value", "double_array_value", "int_array_value", "string_array_value", "json_value", "arrow_value", "bytes_value", "file_uploader_state_value", "string_trigger_value", "chat_input_value"] | None: ...
+    def HasField(self, field_name: typing.Literal["arrow_value", b"arrow_value", "bool_value", b"bool_value", "bytes_value", b"bytes_value", "chat_input_value", b"chat_input_value", "double_array_value", b"double_array_value", "double_value", b"double_value", "file_uploader_state_value", b"file_uploader_state_value", "int_array_value", b"int_array_value", "int_value", b"int_value", "json_trigger_value", b"json_trigger_value", "json_value", b"json_value", "string_array_value", b"string_array_value", "string_trigger_value", b"string_trigger_value", "string_value", b"string_value", "trigger_value", b"trigger_value", "value", b"value"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["arrow_value", b"arrow_value", "bool_value", b"bool_value", "bytes_value", b"bytes_value", "chat_input_value", b"chat_input_value", "double_array_value", b"double_array_value", "double_value", b"double_value", "file_uploader_state_value", b"file_uploader_state_value", "id", b"id", "int_array_value", b"int_array_value", "int_value", b"int_value", "json_trigger_value", b"json_trigger_value", "json_value", b"json_value", "string_array_value", b"string_array_value", "string_trigger_value", b"string_trigger_value", "string_value", b"string_value", "trigger_value", b"trigger_value", "value", b"value"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["value", b"value"]) -> typing.Literal["trigger_value", "bool_value", "double_value", "int_value", "string_value", "double_array_value", "int_array_value", "string_array_value", "json_value", "arrow_value", "bytes_value", "file_uploader_state_value", "string_trigger_value", "chat_input_value", "json_trigger_value"] | None: ...
 
 global___WidgetState = WidgetState

@@ -9,3 +9,4 @@ langchain
 langchain-google-genai
 langchain-openai
 langchain-core
+reportlab

@@ -31,18 +31,21 @@ class HeightConfig(google.protobuf.message.Message):
     USE_STRETCH_FIELD_NUMBER: builtins.int
     USE_CONTENT_FIELD_NUMBER: builtins.int
     PIXEL_HEIGHT_FIELD_NUMBER: builtins.int
+    REM_HEIGHT_FIELD_NUMBER: builtins.int
     use_stretch: builtins.bool
     use_content: builtins.bool
     pixel_height: builtins.int
+    rem_height: builtins.float
     def __init__(
         self,
         *,
         use_stretch: builtins.bool = ...,
         use_content: builtins.bool = ...,
         pixel_height: builtins.int = ...,
+        rem_height: builtins.float = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["height_spec", b"height_spec", "pixel_height", b"pixel_height", "use_content", b"use_content", "use_stretch", b"use_stretch"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["height_spec", b"height_spec", "pixel_height", b"pixel_height", "use_content", b"use_content", "use_stretch", b"use_stretch"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["height_spec", b"height_spec"]) -> typing.Literal["use_stretch", "use_content", "pixel_height"] | None: ...
+    def HasField(self, field_name: typing.Literal["height_spec", b"height_spec", "pixel_height", b"pixel_height", "rem_height", b"rem_height", "use_content", b"use_content", "use_stretch", b"use_stretch"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["height_spec", b"height_spec", "pixel_height", b"pixel_height", "rem_height", b"rem_height", "use_content", b"use_content", "use_stretch", b"use_stretch"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["height_spec", b"height_spec"]) -> typing.Literal["use_stretch", "use_content", "pixel_height", "rem_height"] | None: ...
 
 global___HeightConfig = HeightConfig
