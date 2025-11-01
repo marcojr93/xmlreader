@@ -456,7 +456,7 @@ Realize os cálculos considerando regime de LUCRO REAL e apresente resultados em
 
     def _gerar_relatorio_hibrido(self, resultado: Dict[str, Any]) -> str:
         """Gera relatório híbrido com tabelas e texto"""
-        relatorio = "# 🧮 RELATÓRIO TRIBUTÁRIO - CÁLCULO DE DELTA E MULTAS\n\n"
+        relatorio = "# 🧮 RELATÓRIO TRIBUTÁRIO - CÁLCULO DE DELTA E MULTAS\n"
         
         # Cabeçalho
         status_emoji = {"sucesso": "", "erro": "", "parcial": ""}
@@ -465,12 +465,12 @@ Realize os cálculos considerando regime de LUCRO REAL e apresente resultados em
         relatorio += f"**{emoji} Status do Cálculo:** {resultado.get('status', 'Desconhecido')}\n"
         relatorio += f"**Regime Tributário:** {resultado.get('regime_tributario', 'LUCRO REAL')}\n"
         relatorio += f"**🔢 Impostos Analisados:** {resultado.get('impostos_analisados', 0)}\n"
-        relatorio += f"**Timestamp:** {resultado.get('timestamp_calculo', 'N/A')}\n\n"
+        relatorio += f"**Timestamp:** {resultado.get('timestamp_calculo', 'N/A')}\n"
         
         # Tabela resumo
         tabela_resumo = resultado.get('tabela_resumo', {})
         if tabela_resumo and tabela_resumo.get('linhas'):
-            relatorio += "## TABELA RESUMO - DELTA DE IMPOSTOS\n\n"
+            relatorio += "## TABELA RESUMO - DELTA DE IMPOSTOS\n"
             
             # Cabeçalho da tabela
             cabecalho = tabela_resumo.get('cabecalho', [])
@@ -481,12 +481,12 @@ Realize os cálculos considerando regime de LUCRO REAL e apresente resultados em
                 # Linhas da tabela
                 for linha in tabela_resumo['linhas']:
                     relatorio += "| " + " | ".join(str(item) for item in linha) + " |\n"
-                relatorio += "\n"
+                
         
         # Delta de impostos detalhado
         delta_impostos = resultado.get('delta_impostos', {})
         if delta_impostos:
-            relatorio += "## ANÁLISE DETALHADA DO DELTA\n\n"
+            relatorio += "## ANÁLISE DETALHADA DO DELTA\n"
             
             # ICMS
             icms = delta_impostos.get('icms', {})
@@ -503,7 +503,7 @@ Realize os cálculos considerando regime de LUCRO REAL e apresente resultados em
                 relatorio += f"- **% Diferença:** {percentual:.2f}%\n"
                 if icms.get('observacoes'):
                     relatorio += f"- **Observações:** {icms['observacoes']}\n"
-                relatorio += "\n"
+              
             
             # PIS/COFINS
             pis_cofins = delta_impostos.get('pis_cofins', {})
@@ -522,7 +522,7 @@ Realize os cálculos considerando regime de LUCRO REAL e apresente resultados em
                 relatorio += f"- **Delta Total:** R$ {delta_total:,.2f}\n"
                 if pis_cofins.get('observacoes'):
                     relatorio += f"- **Observações:** {pis_cofins['observacoes']}\n"
-                relatorio += "\n"
+                
             
             # IPI
             ipi = delta_impostos.get('ipi', {})
@@ -537,12 +537,12 @@ Realize os cálculos considerando regime de LUCRO REAL e apresente resultados em
                 relatorio += f"- **Delta:** R$ {delta:,.2f}\n"
                 if ipi.get('observacoes'):
                     relatorio += f"- **Observações:** {ipi['observacoes']}\n"
-                relatorio += "\n"
+                
         
         # Cálculo de multas
         calculo_multas = resultado.get('calculo_multas', {})
         if calculo_multas:
-            relatorio += "## CÁLCULO DE MULTAS POTENCIAIS\n\n"
+            relatorio += "## CÁLCULO DE MULTAS POTENCIAIS\n"
             
             # Resumo de multas
             if calculo_multas.get('total_multas'):
@@ -552,12 +552,12 @@ Realize os cálculos considerando regime de LUCRO REAL e apresente resultados em
                 
                 relatorio += f"**💸 Total de Multas:** R$ {total_multas:,.2f}\n"
                 relatorio += f"**Multa Mínima:** R$ {multa_minima:,.2f}\n"
-                relatorio += f"**Multa Máxima:** R$ {multa_maxima:,.2f}\n\n"
+                relatorio += f"**Multa Máxima:** R$ {multa_maxima:,.2f}\n"
             
             # Detalhes das multas
             multas_potenciais = calculo_multas.get('multas_potenciais', [])
             if multas_potenciais:
-                relatorio += "### DETALHAMENTO DAS MULTAS\n\n"
+                relatorio += "### DETALHAMENTO DAS MULTAS\n"
                 
                 for i, multa in enumerate(multas_potenciais, 1):
                     relatorio += f"**{i}. {multa.get('tipo_infracao', 'N/A')}**\n"

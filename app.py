@@ -6,16 +6,19 @@ import streamlit as st
 
 # Importa as funções de cada página
 from view.login import login_page
-from view.main import welcome_screen
+
+from view.main import main_screen
 
 # --- Bloco de Execução Principal (Roteador) ---
 
 # Inicializa o estado da sessão se não existir
+if "welcome_seen" not in st.session_state:
+    st.session_state.welcome_seen = False
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
 # Controla qual página é exibida
 if not st.session_state.logged_in:
-    login_page()  # Se não logado, vai para login
+    login_page()
 else:
-    welcome_screen()  # Se logado, vai para tela principal
+    main_screen()

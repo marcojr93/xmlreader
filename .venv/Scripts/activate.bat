@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\bih14\OneDrive\Marco's PC\Estudos\Lima solutions\extrator_xml\extrator_xml\.venv"
+set "VIRTUAL_ENV=C:\Users\bih14\OneDrive\Marco's PC\Estudos\xmlreader\.venv"
 
 if not defined PROMPT set PROMPT=$P$G
 

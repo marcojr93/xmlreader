@@ -700,9 +700,8 @@ class ARROW_ACERO_EXPORT AsofJoinNodeOptions : public ExecNodeOptions {
     /// \brief "on" key for the join.
     ///
     /// The input table must be sorted by the "on" key. Must be a single field of a common
-    /// type. An inexact match is used on the "on" key, i.e. a row is considered a
-    /// match if and only if `right.on - left.on` is in the range
-    /// `[min(0, tolerance), max(0, tolerance)]`.
+    /// type. Inexact match is used on the "on" key. i.e., a row is considered a match iff
+    /// left_on - tolerance <= right_on <= left_on.
     /// Currently, the "on" key must be of an integer, date, or timestamp type.
     FieldRef on_key;
     /// \brief "by" key for the join.
@@ -724,14 +723,10 @@ class ARROW_ACERO_EXPORT AsofJoinNodeOptions : public ExecNodeOptions {
   /// \see `Keys` for details.
   std::vector<Keys> input_keys;
   /// \brief Tolerance for inexact "on" key matching. A right row is considered a match
-  /// with a left row if `right.on - left.on` is in the range
-  /// `[min(0, tolerance), max(0, tolerance)]`. `tolerance` may be:
-  /// - negative, in which case a past-as-of-join occurs (match iff
-  ///   `tolerance <= right.on - left.on <= 0`);
-  /// - or positive, in which case a future-as-of-join occurs (match iff
-  ///   `0 <= right.on - left.on <= tolerance`);
-  /// - or zero, in which case an exact-as-of-join occurs (match iff
-  ///   `right.on == left.on`).
+  /// with the left row if `right.on - left.on <= tolerance`. The `tolerance` may be:
+  /// - negative, in which case a past-as-of-join occurs;
+  /// - or positive, in which case a future-as-of-join occurs;
+  /// - or zero, in which case an exact-as-of-join occurs.
   ///
   /// The tolerance is interpreted in the same units as the "on" key.
   int64_t tolerance;

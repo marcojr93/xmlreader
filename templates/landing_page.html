@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaaS - Compliance as a Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1C355D;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo {
+            width: 173px;
+            height: 173px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            padding: 15px;
+        }
+
+        .logo-img {
+            width: 150%;
+            height: 150%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1C355D;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6B7280;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #1C355D;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgb(232, 243, 247);
+            border-radius: 16px;
+            padding: 35px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(28, 53, 93, 0.15);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0bb4c0 0%, #0bb4c0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1C355D;
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            color: #6B7280;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px 80px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* How it Works Section */
+        .how-it-works {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            box-shadow: 0 4px 30px rgba(28, 53, 93, 0.08);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .how-it-works h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1C355D;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: #F8F9FB;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            min-width: 40px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1C355D 0%, #2d4a7a 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1C355D;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: #6B7280;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: #0bb4c0;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0bb4c0 0%, #0bb4c0 100%);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 18px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(245, 130, 32, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #0bb4c0 0%, #0bb4c0 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(245, 130, 32, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 28px 24px;
+            }
+
+            .how-it-works {
+                padding: 35px 25px;
+            }
+
+            .how-it-works h2 {
+                font-size: 1.5rem;
+            }
+
+            .process-step {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .step-number {
+                align-self: flex-start;
+            }
+
+            .cta-button {
+                padding: 16px 50px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="../assets/logo.png" alt="CaaS Logo" class="logo-img">
+            </div>
+            <h1>Bem-vindo ao CaaS - Compliance as a Service</h1>
+            <p class="subtitle">
+                Facilite a análise e validação de documentos fiscais em formato XML utilizando inteligência artificial. 
+                Automatize processos, garanta conformidade e tome decisões mais inteligentes.
+            </p>
+        </header>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">Funcionalidades</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Extração de Dados</h3>
+                    <p class="feature-description">
+                        Carregue arquivos XML de sua nota fiscal para extrair todas as informações relevantes de forma automática e precisa.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Análise Tributária</h3>
+                    <p class="feature-description">
+                        A IA analisa os dados extraídos para identificar possíveis inconsistências tributárias e oportunidades de otimização.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Validação de Regras</h3>
+                    <p class="feature-description">
+                        O sistema valida os documentos com base em um conjunto abrangente de regras fiscais brasileiras atualizadas.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Geração de Relatórios</h3>
+                    <p class="feature-description">
+                        Exporte os resultados da análise em formato Excel com visualizações claras e acionáveis para sua equipe.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works Section -->
+        <section class="how-it-works">
+            <h2>Como Funciona?</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Recebimento da Nota Fiscal</h3>
+                        <p>O sistema recebe seus documentos fiscais em formato XML de forma segura e simplificada.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Extração e Criptografia</h3>
+                        <p>Todas as informações são extraídas automaticamente e <span class="highlight">dados sensíveis são criptografados para garantir conformidade com a LGPD</span>, protegendo a privacidade dos seus clientes.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Análise Inteligente</h3>
+                        <p><span class="highlight">Agentes autônomos são orquestrados</span> para buscar discrepâncias e identificar oportunidades de otimização conforme as leis fiscais vigentes.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Entrega do Relatório</h3>
+                        <p>Receba um relatório completo e detalhado com todas as análises, recomendações e ações necessárias para manter sua conformidade fiscal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <a href="http://localhost:8501" target="_blank" class="cta-button">Entrar</a>
+        </section>
+    </div>
+</body>
+</html>

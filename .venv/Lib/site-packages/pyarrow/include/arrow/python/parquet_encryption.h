@@ -22,7 +22,6 @@
 #include "arrow/python/common.h"
 #include "arrow/python/visibility.h"
 #include "arrow/util/macros.h"
-#include "arrow/util/secure_string.h"
 #include "parquet/encryption/crypto_factory.h"
 #include "parquet/encryption/kms_client.h"
 #include "parquet/encryption/kms_client_factory.h"
@@ -57,12 +56,11 @@ namespace encryption {
 /// Python.
 class ARROW_PYTHON_PARQUET_ENCRYPTION_EXPORT PyKmsClientVtable {
  public:
-  std::function<void(PyObject*, const ::arrow::util::SecureString& key,
+  std::function<void(PyObject*, const std::string& key_bytes,
                      const std::string& master_key_identifier, std::string* out)>
       wrap_key;
   std::function<void(PyObject*, const std::string& wrapped_key,
-                     const std::string& master_key_identifier,
-                     ::arrow::util::SecureString* out)>
+                     const std::string& master_key_identifier, std::string* out)>
       unwrap_key;
 };
 
@@ -73,11 +71,11 @@ class ARROW_PYTHON_PARQUET_ENCRYPTION_EXPORT PyKmsClient
   PyKmsClient(PyObject* handler, PyKmsClientVtable vtable);
   ~PyKmsClient() override;
 
-  std::string WrapKey(const ::arrow::util::SecureString& key,
+  std::string WrapKey(const std::string& key_bytes,
                       const std::string& master_key_identifier) override;
 
-  ::arrow::util::SecureString UnwrapKey(
-      const std::string& wrapped_key, const std::string& master_key_identifier) override;
+  std::string UnwrapKey(const std::string& wrapped_key,
+                        const std::string& master_key_identifier) override;
 
  private:
   OwnedRefNoGIL handler_;
